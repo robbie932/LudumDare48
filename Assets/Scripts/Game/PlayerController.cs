@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0, 5)]
     int maxAirJumps = 0;
 
+    [SerializeField]
+    private float fallOffHelpTime = 0.1f;
+
     [SerializeField, Range(0, 90)]
     float maxGroundAngle = 25f;
 
@@ -44,6 +47,9 @@ public class PlayerController : MonoBehaviour
     int groundContactCount;
 
     bool OnGround => groundContactCount > 0;
+    bool onGroundLast;
+    private float fallOffJumpValid;
+    private bool IsFallTimeHelpValid => Time.time <= fallOffJumpValid && velocity.y < 0;
 
     int jumpPhase;
 
@@ -107,6 +113,12 @@ public class PlayerController : MonoBehaviour
     void UpdateState()
     {
         velocity = body.velocity;
+        if (onGroundLast && !OnGround)
+        {
+            fallOffJumpValid = Time.time + fallOffHelpTime;
+            //just fell
+        }
+
         if (OnGround)
         {
             jumpPhase = 0;
@@ -119,6 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             contactNormal = Vector3.up;
         }
+        onGroundLast = OnGround;
     }
 
     void AdjustVelocity()
@@ -142,7 +155,8 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (OnGround || jumpPhase < maxAirJumps)
+
+        if (OnGround || IsFallTimeHelpValid || jumpPhase < maxAirJumps)
         {
             jumpPhase += 1;
             float jumpSpeed = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
