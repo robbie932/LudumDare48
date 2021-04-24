@@ -78,6 +78,12 @@ public class PlayerController : MonoBehaviour
             new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
 
         desiredJump |= Input.GetButtonDown("Jump");
+
+        if (transform.position.y < -50)
+        {
+            transform.position = Vector3.zero;
+            body.AddForce(Vector3.zero, ForceMode.VelocityChange);
+        }
     }
 
     void FixedUpdate()
