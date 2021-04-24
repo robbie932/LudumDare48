@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour
     {
         groundContactCount = 0;
         contactNormal = Vector3.zero;
+        onGroundLast = OnGround;
     }
 
     void UpdateState()
@@ -141,7 +142,6 @@ public class PlayerController : MonoBehaviour
         {
             contactNormal = Vector3.up;
         }
-        onGroundLast = OnGround;
     }
 
     void AdjustVelocity()
