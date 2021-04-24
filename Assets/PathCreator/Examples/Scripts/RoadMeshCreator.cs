@@ -57,8 +57,12 @@ namespace PathCreation.Examples
             var length = path.length;
             var distPerPoint = length / path.NumPoints;
 
-            var pointOffset = Mathf.RoundToInt(data.offset / distPerPoint);
-            var numPoints = Mathf.RoundToInt(data.length / distPerPoint);
+            var startData = path.CalculatePercentOnPathData(data.offset / path.length, EndOfPathInstruction.Stop);
+            var startIndex = startData.previousIndex;
+            var endData = path.CalculatePercentOnPathData((data.offset + data.length) / path.length, EndOfPathInstruction.Stop);
+            var endIndex = endData.nextIndex;
+
+            var numPoints = endIndex - startIndex;
 
             Vector3[] verts = new Vector3[numPoints * 8 + 4];
             Vector2[] uvs = new Vector2[verts.Length];
@@ -85,7 +89,7 @@ namespace PathCreation.Examples
             Vector3 localRight;
             for (int i = 0; i < numPoints; i++)
             {
-                var pathIndexOffset = i + pointOffset;
+                var pathIndexOffset = i + startIndex;
                 localUp = (usePathNormals) ? Vector3.Cross(path.GetTangent(pathIndexOffset), path.GetNormal(pathIndexOffset)) : path.up;
                 localRight = (usePathNormals) ? path.GetNormal(pathIndexOffset) : Vector3.Cross(localUp, path.GetTangent(pathIndexOffset));
 
@@ -142,8 +146,8 @@ namespace PathCreation.Examples
                 triIndex += 6;
             }
 
-            localUp = (usePathNormals) ? Vector3.Cross(path.GetTangent(pointOffset), path.GetNormal(pointOffset)) : path.up;
-            localRight = (usePathNormals) ? path.GetNormal(pointOffset) : Vector3.Cross(localUp, path.GetTangent(pointOffset));
+            localUp = (usePathNormals) ? Vector3.Cross(path.GetTangent(startIndex), path.GetNormal(startIndex)) : path.up;
+            localRight = (usePathNormals) ? path.GetNormal(startIndex) : Vector3.Cross(localUp, path.GetTangent(startIndex));
             Vector3 localForward = Vector3.Cross(localUp, localRight);
 
             verts[vertIndex] = verts[0];
