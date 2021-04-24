@@ -9,6 +9,8 @@ using System.Linq;
 public struct PlatformData
 {
     public float length, offset;
+    public int sideCount;
+    public float sideOffset;
 }
 
 public class PlatformCreator : PathSceneTool
@@ -30,11 +32,6 @@ public class PlatformCreator : PathSceneTool
     public float textureTiling = 1;
 
     public PlatformData[] platforms = new PlatformData[1];
-
-    private void OnValidate()
-    {
-
-    }
 
     [ContextMenu("UPDATE SIDES")]
     private void UpdateSides()
@@ -117,12 +114,18 @@ public class PlatformCreator : PathSceneTool
         {
             PlatformData data = platforms[i];
             offset += data.offset;
-            CreateRoadMesh(offset, data.length, i, 3);
+
+            var w = (data.sideCount - 1) * data.sideOffset;
+            for (int s = 0; s < data.sideCount; s++)
+            {
+                var pOffset = s * data.sideOffset - w * 0.5f;
+                CreateRoadMesh(offset, data.length, i, pOffset, 3);
+            }
             offset += data.length;
         }
     }
 
-    void CreateRoadMesh(float offset, float length, int platformIndex, int numPoints)
+    void CreateRoadMesh(float offset, float length, int platformIndex, float positionOffset, int numPoints)
     {
         Vector3[] verts = new Vector3[numPoints * 8 + 4];
         Vector2[] uvs = new Vector2[verts.Length];
@@ -150,6 +153,7 @@ public class PlatformCreator : PathSceneTool
 
             var pos = Vector3.Lerp(path.GetPointAtDistance(offset), path.GetPointAtDistance(offset + length), a);
             var rot = Quaternion.Lerp(path.GetRotationAtDistance(offset), path.GetRotationAtDistance(offset + length), a);
+            pos += rot * Vector3.right * positionOffset;
 
             var localUp = rot * Vector3.up;
             var localRight = rot * Vector3.right;
