@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 playerInput;
         playerInput.x = Input.GetAxis("Horizontal");
-        playerInput.y = Input.GetAxis("Vertical");
+        playerInput.y = 1;
         playerInput = Vector2.ClampMagnitude(playerInput, 1f);
 
         desiredVelocity =
@@ -90,7 +90,14 @@ public class PlayerController : MonoBehaviour
             desiredJump = false;
             Jump();
         }
+        AdjustVerticalFallSpeed();
 
+        body.velocity = velocity;
+        ClearState();
+    }
+
+    private void AdjustVerticalFallSpeed()
+    {
         if (velocity.y < 0)
         {
             velocity += Physics.gravity * ((fallMulltiplier - 1) * Time.fixedDeltaTime);
@@ -99,9 +106,6 @@ public class PlayerController : MonoBehaviour
         {
             velocity += Physics.gravity * ((lowJumpMulltiplier - 1) * Time.fixedDeltaTime);
         }
-
-        body.velocity = velocity;
-        ClearState();
     }
 
     void ClearState()
