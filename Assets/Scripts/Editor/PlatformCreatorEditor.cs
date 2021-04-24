@@ -52,7 +52,12 @@ public class PlatformCreatorEditor : Editor
                 var current = sectionsProp.GetArrayElementAtIndex(i);
                 EditorGUILayout.BeginHorizontal();
                 {
+                    EditorGUI.BeginChangeCheck();
                     EditorGUILayout.PropertyField(current, new GUIContent("Section " + i));
+                    if (EditorGUI.EndChangeCheck())
+                    {
+                        dirty = true;
+                    }
                     EditorGUILayout.BeginHorizontal(GUILayout.Width(buttonSize * 3));
                     {
                         if (GUILayout.Button("^", EditorStyles.miniButtonLeft, GUILayout.Width(buttonSize)))
@@ -72,6 +77,12 @@ public class PlatformCreatorEditor : Editor
                                 dirty = true;
                                 break;
                             }
+                        }
+                        if (GUILayout.Button("c", EditorStyles.miniButtonRight, GUILayout.Width(buttonSize)))
+                        {
+                            sectionsProp.InsertArrayElementAtIndex(i);
+                            dirty = true;
+                            break;
                         }
                         if (GUILayout.Button("x", EditorStyles.miniButtonRight, GUILayout.Width(buttonSize)))
                         {

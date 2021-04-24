@@ -188,7 +188,8 @@ public class PlayerController : MonoBehaviour
         float newZ =
             Mathf.MoveTowards(currentZ, desiredVelocity.z, maxSpeedChange);
 
-        velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
+        velocity += xAxis * (newX - currentX);
+        velocity += zAxis * (newZ - currentZ);
     }
 
     void Jump()
