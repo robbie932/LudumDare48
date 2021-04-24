@@ -31,11 +31,12 @@ public class PlatformCreator : PathSceneTool
                 {
                     var a = (float)i / 2;
                     var partAngle = Mathf.Lerp(-angle, angle, a);
-                    var offsetRot = Quaternion.Euler(0, 0, partAngle);
-                    var dir = offsetRot * Vector3.down * offset;
-
+                    var centerRotation = path.GetRotationAtDistance(dst);
+                    var offsetRot = centerRotation * Quaternion.Euler(0, 0, partAngle);
+                    var normal = path.GetNormalAtDistance(dst);
+                    var dir = offsetRot * -normal * offset;
                     Vector3 point = path.GetPointAtDistance(dst) + dir + globalOffset;
-                    Quaternion rot = offsetRot * path.GetRotationAtDistance(dst);
+                    Quaternion rot = offsetRot;
                     Instantiate(prefab, point, rot, transform);
                 }
                 dst += spacing;
