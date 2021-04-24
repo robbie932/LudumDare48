@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < -50)
         {
             transform.position = Vector3.zero;
+            velocity = Vector3.zero;
             body.AddForce(Vector3.zero, ForceMode.VelocityChange);
         }
     }
@@ -104,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void AdjustVerticalFallSpeed()
     {
+        velocity += Physics.gravity * Time.fixedDeltaTime;
         if (velocity.y < 0)
         {
             velocity += Physics.gravity * ((fallMulltiplier - 1) * Time.fixedDeltaTime);

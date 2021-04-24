@@ -15,11 +15,6 @@ public struct PlatformData
 
 public class PlatformCreator : PathSceneTool
 {
-    public bool main = false;
-    [Header("Side paths")]
-    public PlatformCreator[] sideCreators;
-    public float partOffset = 3;
-
     [Header("Road settings")]
     public float roadWidth = .4f;
     [Range(0, .5f)]
@@ -32,66 +27,6 @@ public class PlatformCreator : PathSceneTool
     public float textureTiling = 1;
 
     public PlatformData[] platforms = new PlatformData[1];
-
-    [ContextMenu("UPDATE SIDES")]
-    private void UpdateSides()
-    {
-        if (!main)
-        {
-            return;
-        }
-
-        for (int i = 0; i < sideCreators.Length; i++)
-        {
-            sideCreators[i].Copy(this);
-        }
-
-        var original = pathCreator.bezierPath;
-        UpdateSideCurve(sideCreators[0].pathCreator, -partOffset);
-        UpdateSideCurve(sideCreators[1].pathCreator, partOffset);
-
-        void UpdateSideCurve(PathCreator sideCreator, float offset)
-        {
-            var target = sideCreator.bezierPath;
-            var diff = original.NumPoints - target.NumPoints;
-
-            for (int i = 0; i < Mathf.Abs(diff); i++)
-            {
-                if (diff < 0)
-                {
-                    target.DeleteSegment(original.NumPoints);
-                }
-                else if (diff > 0)
-                {
-                    target.AddSegmentToEnd(Vector3.zero);
-                }
-            }
-
-            for (int i = 0; i < original.NumPoints; i++)
-            {
-                target.MovePoint(i, original.GetPoint(i) + Vector3.right * offset);
-            }
-            sideCreator.bezierPath = target;
-            sideCreator.TriggerPathUpdate();
-        }
-        for (int i = 0; i < sideCreators.Length; i++)
-        {
-            sideCreators[i].CreateMultipleMeshes();
-        }
-    }
-
-    private void Copy(PlatformCreator from)
-    {
-        partOffset = from.partOffset;
-        roadWidth = from.roadWidth;
-        thickness = from.thickness;
-        top = from.top;
-        side = from.side;
-        front = from.front;
-        textureTiling = from.textureTiling;
-        platforms = from.platforms;
-
-    }
 
     protected override void PathUpdated()
     {
