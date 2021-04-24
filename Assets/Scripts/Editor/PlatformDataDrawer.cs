@@ -12,6 +12,7 @@ public class PlatformDataDrawer : PropertyDrawer
     {
         return EditorGUIUtility.singleLineHeight * 2 + 2;
     }
+
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         EditorGUI.BeginProperty(position, label, property);
@@ -23,7 +24,7 @@ public class PlatformDataDrawer : PropertyDrawer
         EditorGUI.indentLevel = 0;
 
         // Calculate rects
-        var tLw = 80;
+        var tLw = 60;
         var w = position.width * 0.4f;
         var h = position.height * 0.5f;
         var offsetRect = new Rect(position.x, position.y, w,h );
@@ -33,11 +34,16 @@ public class PlatformDataDrawer : PropertyDrawer
 
         var lw = EditorGUIUtility.labelWidth;
         EditorGUIUtility.labelWidth = tLw;
+        EditorGUI.BeginChangeCheck();
         // Draw fields - passs GUIContent.none to each so they are drawn without labels
         EditorGUI.PropertyField(lengthRect, property.FindPropertyRelative(nameof(PlatformData.length)));
         EditorGUI.PropertyField(offsetRect, property.FindPropertyRelative(nameof(PlatformData.offset)));
         EditorGUI.PropertyField(sidRect, property.FindPropertyRelative(nameof(PlatformData.sideCount)));
         EditorGUI.PropertyField(sideOffstRect, property.FindPropertyRelative(nameof(PlatformData.sideOffset)));
+        if (EditorGUI.EndChangeCheck())
+        { 
+            PlatformCreator.instance.CreateMultipleMeshes();
+        }
         EditorGUIUtility.labelWidth = lw;
 
         // Set indent back to what it was

@@ -5,16 +5,15 @@ using PathCreation;
 using PathCreation.Examples;
 using System.Linq;
 
-[System.Serializable]
-public struct PlatformData
+partial class Game
 {
-    public float length, offset;
-    public int sideCount;
-    public float sideOffset;
+    public static PlatformCreator PlatformCreator => PlatformCreator.instance;
 }
-
 public class PlatformCreator : PathSceneTool
 {
+    public static PlatformCreator instance;
+    public static bool dirty;
+
     [Header("Road settings")]
     public float roadWidth = .4f;
     [Range(0, .5f)]
@@ -26,8 +25,22 @@ public class PlatformCreator : PathSceneTool
     public Material front;
     public float textureTiling = 1;
 
-    public PlatformData[] platforms = new PlatformData[1];
+    public PlatformDataObject[] sections;
 
+    private void Awake()
+    {
+        OnValidate();
+    }
+
+    private void OnValidate()
+    {
+        instance = this;
+        if (dirty)
+        {
+            CreateMultipleMeshes();
+            dirty = false;
+        }
+    }
     protected override void PathUpdated()
     {
         if (pathCreator != null)
@@ -36,6 +49,7 @@ public class PlatformCreator : PathSceneTool
         }
     }
 
+    [ContextMenu("Update")]
     public void CreateMultipleMeshes()
     {
         int numChildren = transform.childCount;
@@ -45,18 +59,22 @@ public class PlatformCreator : PathSceneTool
         }
 
         var offset = 0f;
-        for (int i = 0; i < platforms.Length; i++)
+        for (int i = 0; i < sections.Length; i++)
         {
-            PlatformData data = platforms[i];
-            offset += data.offset;
-
-            var w = (data.sideCount - 1) * data.sideOffset;
-            for (int s = 0; s < data.sideCount; s++)
+            var platforms = sections[i].data;
+            for (int j = 0; j < platforms.Length; j++)
             {
-                var pOffset = s * data.sideOffset - w * 0.5f;
-                CreateRoadMesh(offset, data.length, i, pOffset, 3);
+                PlatformData data = platforms[j];
+                offset += data.offset;
+
+                var w = (data.sideCount - 1) * data.sideOffset;
+                for (int s = 0; s < data.sideCount; s++)
+                {
+                    var pOffset = s * data.sideOffset - w * 0.5f;
+                    CreateRoadMesh(offset, data.length, j, pOffset, 3);
+                }
+                offset += data.length;
             }
-            offset += data.length;
         }
     }
 

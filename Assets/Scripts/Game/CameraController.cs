@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;
     public float verticalAngle = 30;
     public float length = 10;
-    public float positionLerpFactor;
+    public float positionLerpFactor,rotationLerpFactor;
 
     private Quaternion rotation;
     private Vector3 offsetPosition;
@@ -27,8 +27,14 @@ public class CameraController : MonoBehaviour
         if (!Application.isPlaying)
         {
             transform.position = offsetPosition;
-            transform.rotation = Quaternion.LookRotation(-(offsetPosition-offset).normalized);
+            transform.rotation = Quaternion.LookRotation(-(offsetPosition - offset).normalized);
         }
+    }
+
+    private void UpdateRotation(float hRot)
+    {
+        rotation = Quaternion.Euler(verticalAngle, hRot, 0);
+        offsetPosition = offset + rotation * (-Vector3.forward * length);
     }
 
     private void Awake()
@@ -39,7 +45,9 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        var t = Game.Player.transform.position + offsetPosition;
+        var t = Game.Player.pathPosition + offsetPosition;
+        UpdateRotation(Game.Player.pathRotation.eulerAngles.y);
         transform.position = Vector3.Lerp(transform.position, t, positionLerpFactor);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationLerpFactor);
     }
 }

@@ -9,6 +9,7 @@ partial class Game
 
 public class PlayerController : MonoBehaviour
 {
+
     public static PlayerController instance;
 
     [SerializeField, Range(0f, 100f)]
@@ -38,6 +39,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody body;
 
+    internal Vector3 pathPosition;
+    internal Quaternion pathRotation;
+
     Vector3 velocity, desiredVelocity;
 
     Vector3 contactNormal;
@@ -54,6 +58,7 @@ public class PlayerController : MonoBehaviour
     int jumpPhase;
 
     float minGroundDotProduct;
+
 
     void OnValidate()
     {
@@ -72,12 +77,14 @@ public class PlayerController : MonoBehaviour
         Vector2 playerInput;
         playerInput.x = Input.GetAxis("Horizontal");
         playerInput.y = 1;
-        playerInput = Vector2.ClampMagnitude(playerInput, 1f);
+        //playerInput = Vector2.ClampMagnitude(playerInput, 1f);
 
         desiredVelocity =
             new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
 
         desiredJump |= Input.GetButtonDown("Jump");
+
+        UpdatePathData();
 
         if (transform.position.y < -50)
         {
@@ -103,6 +110,16 @@ public class PlayerController : MonoBehaviour
         ClearState();
     }
 
+    public void UpdatePathData()
+    {
+        var path = Game.PlatformCreator.pathCreator.path;
+        var closestDistOnPath = path.GetClosestDistanceAlongPath(transform.position);
+
+        pathPosition = path.GetPointAtDistance(closestDistOnPath);
+        pathRotation = path.GetRotationAtDistance(closestDistOnPath);
+    }
+
+
     private void AdjustVerticalFallSpeed()
     {
         velocity += Physics.gravity * Time.fixedDeltaTime;
@@ -126,6 +143,7 @@ public class PlayerController : MonoBehaviour
     void UpdateState()
     {
         velocity = body.velocity;
+
         if (onGroundLast && !OnGround)
         {
             fallOffJumpValid = Time.time + fallOffHelpTime;
@@ -148,8 +166,11 @@ public class PlayerController : MonoBehaviour
 
     void AdjustVelocity()
     {
-        Vector3 xAxis = ProjectOnContactPlane(Vector3.right).normalized;
-        Vector3 zAxis = ProjectOnContactPlane(Vector3.forward).normalized;
+        var right = pathRotation * Vector3.right;
+        var forward = pathRotation * Vector3.forward;
+
+        Vector3 xAxis = ProjectOnContactPlane(right).normalized;
+        Vector3 zAxis = ProjectOnContactPlane(forward).normalized;
 
         float currentX = Vector3.Dot(velocity, xAxis);
         float currentZ = Vector3.Dot(velocity, zAxis);
