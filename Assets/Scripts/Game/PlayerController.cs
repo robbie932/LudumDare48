@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
             {
                 jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
             }
-            velocity += contactNormal * jumpSpeed;
+            velocity += Vector3.up * jumpSpeed;
         }
     }
 
