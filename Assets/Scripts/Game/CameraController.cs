@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;
     public float verticalAngle = 30;
     public float length = 10;
+    public float positionLerpFactor;
 
     private Quaternion rotation;
     private Vector3 offsetPosition;
@@ -38,6 +39,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = Game.Player.transform.position + offsetPosition;
+        var t = Game.Player.transform.position + offsetPosition;
+        transform.position = Vector3.Lerp(transform.position, t, positionLerpFactor);
     }
 }
