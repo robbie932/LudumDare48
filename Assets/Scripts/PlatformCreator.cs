@@ -25,6 +25,7 @@ public class PlatformCreator : PathSceneTool
     public Material front;
     public float textureTiling = 1;
 
+    [HideInInspector]
     public PlatformDataObject[] sections;
 
     private void Awake()
@@ -65,15 +66,15 @@ public class PlatformCreator : PathSceneTool
             for (int j = 0; j < platforms.Length; j++)
             {
                 PlatformData data = platforms[j];
-                offset += data.offset;
+                offset += data.Offset;
 
-                var w = (data.sideCount - 1) * data.sideOffset;
+                var w = (data.sideCount - 1) * data.SideOffset;
                 for (int s = 0; s < data.sideCount; s++)
                 {
-                    var pOffset = s * data.sideOffset - w * 0.5f;
-                    CreateRoadMesh(offset, data.length, j, pOffset, 3);
+                    var pOffset = s * data.SideOffset - w * 0.5f;
+                    CreateRoadMesh(offset, data.Length, j, pOffset, 3);
                 }
-                offset += data.length;
+                offset += data.Length;
             }
         }
     }

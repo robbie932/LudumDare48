@@ -5,28 +5,20 @@ using UnityEngine;
 [System.Serializable]
 public struct PlatformData
 {
-    public float length, offset;
+    public SizeType length;
+    public SizeType offset;
+    public SizeType sideOffset;
     public int sideCount;
-    public float sideOffset;
-    public enum Lengths
-    { 
-        Small = 5,
-        Medium = 10,
-        Big = 20
-    }
 
-    public enum Offsets
-    {
-        Small = 5,
-        Medium = 7,
-        Big = 10
-    }
+    public float Length => Game.game.GetLengths(length);
+    public float Offset => Game.game.GetOffset(offset);
+    public float SideOffset => Game.game.GetSideOffset(sideOffset);
 
-    public enum SideOffsets
+    public enum SizeType
     {
-        Small = 5,
-        Medium = 7,
-        Big = 10
+        Small = 0,
+        Medium = 1,
+        Big = 2
     }
 }
 

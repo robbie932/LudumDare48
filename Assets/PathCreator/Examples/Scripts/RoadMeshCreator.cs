@@ -51,9 +51,9 @@ public class RoadMeshCreator : PathSceneTool
         var length = path.length;
         var distPerPoint = length / path.NumPoints;
 
-        var startData = path.CalculatePercentOnPathData(data.offset / path.length, EndOfPathInstruction.Stop);
+        var startData = path.CalculatePercentOnPathData(data.Offset / path.length, EndOfPathInstruction.Stop);
         var startIndex = startData.previousIndex;
-        var endData = path.CalculatePercentOnPathData((data.offset + data.length) / path.length, EndOfPathInstruction.Stop);
+        var endData = path.CalculatePercentOnPathData((data.Offset + data.Length) / path.length, EndOfPathInstruction.Stop);
         var endIndex = endData.nextIndex;
 
         var numPoints = endIndex - startIndex;

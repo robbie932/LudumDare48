@@ -12,10 +12,10 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
-    [SerializeField, Range(0f, 100f)]
+    [SerializeField, Range(0f, 200f)]
     float maxSpeed = 10f;
 
-    [SerializeField, Range(0f, 100f)]
+    [SerializeField, Range(0f, 200f)]
     float maxAcceleration = 10f, maxAirAcceleration = 1f;
 
     [SerializeField, Range(0f, 10f)]
