@@ -10,6 +10,8 @@ public class PlatformCreatorEditor : Editor
     PlatformCreator creator;
     private Editor globalDisplaySettingsEditor;
 
+    private bool dirty;
+
     private void OnEnable()
     {
         creator = target as PlatformCreator;
@@ -19,9 +21,21 @@ public class PlatformCreatorEditor : Editor
     {
         base.OnInspectorGUI();
         serializedObject.Update();
+        GUILayout.Space(20);
+        if (GUILayout.Button("Update"))
+        {
+            dirty = true;
+        }
+
         DrawSections();
         DrawGlobalDisplaySettingsInspector();
         serializedObject.ApplyModifiedProperties();
+
+        if (dirty)
+        {
+            dirty = false;
+            creator.CreateMultipleMeshes();
+        }
     }
 
     void DrawSections()
@@ -46,6 +60,7 @@ public class PlatformCreatorEditor : Editor
                             if (i > 0)
                             {
                                 sectionsProp.MoveArrayElement(i, i - 1);
+                                dirty = true;
                                 break;
                             }
                         }
@@ -54,21 +69,24 @@ public class PlatformCreatorEditor : Editor
                             if (i < sectionsProp.arraySize)
                             {
                                 sectionsProp.MoveArrayElement(i, i + 1);
+                                dirty = true;
                                 break;
                             }
                         }
                         if (GUILayout.Button("x", EditorStyles.miniButtonRight, GUILayout.Width(buttonSize)))
                         {
-                            if (i > 0)
-                            {
-                                sectionsProp.DeleteArrayElementAtIndex(i);
-                                break;
-                            }
+                            sectionsProp.DeleteArrayElementAtIndex(i);
+                            dirty = true;
+                            break;
                         }
                     }
                     EditorGUILayout.EndHorizontal();
                 }
                 EditorGUILayout.EndHorizontal();
+            }
+            if (GUILayout.Button("Add"))
+            {
+                sectionsProp.InsertArrayElementAtIndex(sectionsProp.arraySize);
             }
         }
         EditorGUILayout.EndVertical();

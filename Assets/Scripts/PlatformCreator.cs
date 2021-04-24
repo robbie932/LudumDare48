@@ -14,6 +14,32 @@ public class PlatformCreator : PathSceneTool
     public static PlatformCreator instance;
     public static bool dirty;
 
+    [Header("Get Settings")]
+    public float[] Lengths = new float[3];
+    public float[] Offsets = new float[3];
+    public float[] SideOffsets = new float[3];
+    public float GetLengths(PlatformData.SizeType type)
+    {
+        return (GetSetting(Lengths, type));
+    }
+    public float GetOffset(PlatformData.SizeType type)
+    {
+        return (GetSetting(Offsets, type));
+    }
+    public float GetSideOffset(PlatformData.SizeType type)
+    {
+        return (GetSetting(SideOffsets, type));
+    }
+
+    public float GetSetting(float[] from, PlatformData.SizeType type)
+    {
+        if (from.Length <= 0)
+        {
+            return 0;
+        }
+        return from[Mathf.Clamp((int)type, 0, from.Length - 1)];
+    }
+
     [Header("Road settings")]
     public float roadWidth = .4f;
     [Range(0, .5f)]
@@ -62,6 +88,10 @@ public class PlatformCreator : PathSceneTool
         var offset = 0f;
         for (int i = 0; i < sections.Length; i++)
         {
+            if (sections[i] == null)
+            {
+                continue;
+            }
             var platforms = sections[i].data;
             for (int j = 0; j < platforms.Length; j++)
             {
@@ -76,6 +106,7 @@ public class PlatformCreator : PathSceneTool
                 }
                 offset += data.Length;
             }
+            offset += sections[i].OffsetAfter;
         }
     }
 

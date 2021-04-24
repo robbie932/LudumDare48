@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     float fallMulltiplier = 2.5f;
 
     [SerializeField, Range(0f, 10f)]
-    float lowJumpMulltiplier = 2.5f;
+    float lowJumpMulltiplier = 2.5f, jumpDecelerator = 1;
 
     [SerializeField, Range(0, 5)]
     int maxAirJumps = 0;
@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour
     {
         UpdateState();
         AdjustVelocity();
-
         if (desiredJump)
         {
             desiredJump = false;
@@ -122,14 +121,20 @@ public class PlayerController : MonoBehaviour
 
     private void AdjustVerticalFallSpeed()
     {
-        velocity += Physics.gravity * Time.fixedDeltaTime;
         if (velocity.y < 0)
         {
             velocity += Physics.gravity * ((fallMulltiplier - 1) * Time.fixedDeltaTime);
         }
-        else if (velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (velocity.y > 0)
         {
-            velocity += Physics.gravity * ((lowJumpMulltiplier - 1) * Time.fixedDeltaTime);
+            if (!Input.GetButton("Jump"))
+            {
+                velocity += Physics.gravity * ((lowJumpMulltiplier - 1) * Time.fixedDeltaTime);
+            }
+            else
+            {
+                velocity += Physics.gravity * ((jumpDecelerator - 1) * Time.fixedDeltaTime);
+            }
         }
     }
 
@@ -137,7 +142,6 @@ public class PlayerController : MonoBehaviour
     {
         groundContactCount = 0;
         contactNormal = Vector3.zero;
-        onGroundLast = OnGround;
     }
 
     void UpdateState()
@@ -149,6 +153,7 @@ public class PlayerController : MonoBehaviour
             fallOffJumpValid = Time.time + fallOffHelpTime;
             //just fell
         }
+        onGroundLast = OnGround;
 
         if (OnGround)
         {
@@ -198,6 +203,7 @@ public class PlayerController : MonoBehaviour
             {
                 jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
             }
+            velocity.y = 0;
             velocity += Vector3.up * jumpSpeed;
         }
     }

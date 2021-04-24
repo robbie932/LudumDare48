@@ -10,87 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1243d33a5ab02444f88f58248edac505, type: 3}
-  m_Name: Section 2x4
+  m_Name: Section 3x5
   m_EditorClassIdentifier: 
   data:
   - length: 0
     offset: 0
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 2
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
-    sideOffset: 0
-    sideCount: 3
-  - length: 0
-    offset: 1
     sideOffset: 0
     sideCount: 3
   offsetAfter: 10

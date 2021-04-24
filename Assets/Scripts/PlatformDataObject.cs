@@ -10,15 +10,17 @@ public struct PlatformData
     public SizeType sideOffset;
     public int sideCount;
 
-    public float Length => Game.game.GetLengths(length);
-    public float Offset => Game.game.GetOffset(offset);
-    public float SideOffset => Game.game.GetSideOffset(sideOffset);
+    public float Length => PlatformCreator.instance.GetLengths(length);
+    public float Offset => PlatformCreator.instance.GetOffset(offset);
+    public float SideOffset => PlatformCreator.instance.GetSideOffset(sideOffset);
 
     public enum SizeType
     {
-        Small = 0,
-        Medium = 1,
-        Big = 2
+        S = 0,
+        MS = 1,
+        M = 2,
+        ML = 3,
+        L = 4
     }
 }
 
@@ -27,6 +29,7 @@ public struct PlatformData
 public class PlatformDataObject : ScriptableObject
 {
     public PlatformData[] data;
-    public float offsetAfter;
+    public PlatformData.SizeType offsetAfter;
+    public float OffsetAfter => PlatformCreator.instance.GetOffset(offsetAfter);
     public bool globalDisplaySettingsFoldout;
 }
