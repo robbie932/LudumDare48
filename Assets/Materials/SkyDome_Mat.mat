@@ -60,16 +60,17 @@ Material:
     m_Floats:
     - Boolean_3853BEA6: 1
     - Vector1_B4A5A598: 0
-    - Vector1_C0F1847C: 3.41
+    - Vector1_C0F1847C: 2
     - Vector1_D34A8E66: 1
     - _InWorldSpace: 1
     - _MaskSize: 1
     m_Colors:
     - Color_295C3A3B: {r: 1, g: 1, b: 1, a: 0}
-    - Color_83DF0281: {r: 0, g: 0, b: 0, a: 0}
+    - Color_83DF0281: {r: 1, g: 1, b: 1, a: 0}
     - Color_A859CD83: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_1BC940D3: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - Vector2_42A40802: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_39A84AD2: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_42A40802: {r: 0.1, g: 0.2, b: 0, a: 0}
     - Vector2_4C53150E: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_5F35D903: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_9CABC08B: {r: 0.01, g: 0.01, b: 0, a: 0}
