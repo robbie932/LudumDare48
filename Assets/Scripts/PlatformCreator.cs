@@ -100,7 +100,7 @@ public class PlatformCreator : PathSceneTool
                 for (int s = 0; s < data.sideCount; s++)
                 {
                     var pOffset = s * data.SideOffset - w * 0.5f;
-                    CreateRoadMesh(offset, data.Length, j, pOffset, 3);
+                    CreateRoadMesh(offset, data.Length, j, pOffset, 2);
                 }
                 offset += data.Length;
             }
@@ -172,13 +172,13 @@ public class PlatformCreator : PathSceneTool
             uvs[vertIndex + 6] = new Vector2(1, length * textureTiling * a);
             uvs[vertIndex + 7] = new Vector2(1, length * textureTiling * a);
 
-            // Top of road normals
+                // Top of road normals
             normals[vertIndex + 0] = localUp;
             normals[vertIndex + 1] = localUp;
-            // Bottom of road normals
+                // Bottom of road normals
             normals[vertIndex + 2] = -localUp;
             normals[vertIndex + 3] = -localUp;
-            // Sides of road normals
+                // Sides of road normals 
             normals[vertIndex + 4] = -localRight;
             normals[vertIndex + 5] = localRight;
             normals[vertIndex + 6] = -localRight;
@@ -229,6 +229,17 @@ public class PlatformCreator : PathSceneTool
         frontFaceTris[4] = vertIndex + 1;
         frontFaceTris[5] = vertIndex + 3;
 
+        var bounds = new Bounds(verts[0], Vector3.zero);
+        for (int i = 1; i < verts.Length; i++)
+        {
+            Vector3 vert = verts[i];
+            bounds.Encapsulate(vert);
+        }
+        var center = bounds.center;
+        for (int i = 0; i < verts.Length; i++)
+        {
+            verts[i] -= center;
+        }
 
         var mesh = new Mesh();
         mesh.SetVertices(verts);
@@ -237,10 +248,13 @@ public class PlatformCreator : PathSceneTool
 
         mesh.SetTriangles(underRoadTriangles.Concat(roadTriangles).Concat(sideOfRoadTriangles).Concat(frontFaceTris).ToArray(), 0);
         mesh.RecalculateBounds();
+        mesh.RecalculateTangents();
 
         var go = new GameObject("Platform" + platformIndex.ToString());
         go.layer = gameObject.layer;
         go.transform.parent = transform;
+        go.transform.position = center;
+
         go.AddComponent<MeshFilter>().sharedMesh = mesh;
         go.AddComponent<MeshRenderer>().sharedMaterial = mat;
         go.AddComponent<MeshCollider>().convex = true;
