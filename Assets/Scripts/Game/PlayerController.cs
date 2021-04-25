@@ -92,7 +92,7 @@ public partial class PlayerController : MonoBehaviour
 
         UpdateLeaningAnimations();
 
-        if (transform.position.y < lastY - 50)
+        if (transform.position.y < lastY - 80)
         {
             transform.position = Vector3.zero;
             velocity = Vector3.zero;
