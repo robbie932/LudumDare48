@@ -105,6 +105,13 @@ public class PlatformCreatorEditor : Editor
     }
     void DrawGlobalDisplaySettingsInspector()
     {
+        var areSoOpen = EditorGUILayout.Foldout(creator.areSoOpen, "Editors");
+        creator.areSoOpen = areSoOpen;
+        if (!areSoOpen)
+        {
+            return;
+        }
+
         var uniqueSections = creator.sections.Distinct().ToArray();
         var usedPlaces = new List<string>();
         for (int i = 0; i < uniqueSections.Length; i++)
