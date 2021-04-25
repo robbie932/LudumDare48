@@ -23,6 +23,10 @@ public class CameraController : MonoBehaviour
     private Quaternion rotation;
     private Vector3 offsetPosition;
     private float distance;
+
+    internal Vector3 curvePoint;
+    internal Quaternion curvePointRot;
+
     private void OnValidate()
     {
         instance = this;
@@ -77,17 +81,18 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        var point = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(distance);
+        curvePoint = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(distance);
+        curvePointRot = PlatformCreator.instance.pathCreator.path.GetRotationAtDistance(distance);
         var playerPos = Game.Player.transform.position;
-        playerPos.y = point.y;//flat
-        var dirToPlayer = playerPos - point;
+        playerPos.y = curvePoint.y;//flat
+        var dirToPlayer = playerPos - curvePoint;
         var a = dirToPlayer.z / 10f;
         var speed = Mathf.Lerp(0.5f, 2f, a);
 
         distance += Game.Player.maxSpeed * speed * Time.deltaTime;
 
-        var t = point + offsetPosition;
-        UpdateRotation(Game.Player.pathRotation.eulerAngles.y);
+        var t = curvePoint + offsetPosition;
+        UpdateRotation(curvePointRot.eulerAngles.y);
         transform.position = Vector3.Lerp(transform.position, t, positionLerpFactor);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationLerpFactor);
 

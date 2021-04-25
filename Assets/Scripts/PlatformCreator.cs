@@ -183,16 +183,16 @@ public class PlatformCreator : PathSceneTool
             verts[vertIndex + 7] = verts[vertIndex + 3];
 
             // Set uv on y axis to path time (0 at start of path, up to 1 at end of path)
-            uvs[vertIndex + 0] = new Vector2(0, length * textureTiling * a);
-            uvs[vertIndex + 1] = new Vector2(1, length * textureTiling * a);
-            uvs[vertIndex + 2] = new Vector2(1, length * textureTiling * a);
-            uvs[vertIndex + 3] = new Vector2(0, length * textureTiling * a);
+            uvs[vertIndex + 0] = new Vector2(0, a);
+            uvs[vertIndex + 1] = new Vector2(1, a);
+            uvs[vertIndex + 2] = new Vector2(1, a);
+            uvs[vertIndex + 3] = new Vector2(0, a);
 
 
-            uvs[vertIndex + 4] = new Vector2(length * textureTiling * a, 1);
-            uvs[vertIndex + 5] = new Vector2(length * textureTiling * a, 1);
-            uvs[vertIndex + 6] = new Vector2(length * textureTiling * a, 0);
-            uvs[vertIndex + 7] = new Vector2(length * textureTiling * a, 0);
+            uvs[vertIndex + 4] = new Vector2(a, 1);
+            uvs[vertIndex + 5] = new Vector2(a, 1);
+            uvs[vertIndex + 6] = new Vector2(a, 0);
+            uvs[vertIndex + 7] = new Vector2(a, 0);
 
             // Top of road normals
             normals[vertIndex + 0] = localUp;
@@ -288,6 +288,7 @@ public class PlatformCreator : PathSceneTool
 
         return go.transform;
     }
+
     /*private void OnDrawGizmos()
     {
         for (int i = 0; i < platforms.Length; i++)
