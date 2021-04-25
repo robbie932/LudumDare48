@@ -155,6 +155,10 @@ public partial class PlayerController : MonoBehaviour
             fallOffJumpValid = Time.time + fallOffHelpTime;
             //just fell
         }
+        else if (!onGroundLast && OnGround)
+        {
+            landingVfx.Play();
+        }
         onGroundLast = OnGround;
 
         if (OnGround)

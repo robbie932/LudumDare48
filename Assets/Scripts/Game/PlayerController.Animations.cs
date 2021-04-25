@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 partial class PlayerController
 {
@@ -12,6 +13,9 @@ partial class PlayerController
     public float leanSpeed = 0.6f;
     public float rollChance = 0.1f;
     private float leanAmount;
+    [Header("FX")]
+    public VisualEffect landingVfx;
+    
     private void UpdateLeaningAnimations()
     {
         var normalizedX = desiredVelocity.x / maxSpeed;
