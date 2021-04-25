@@ -89,6 +89,7 @@ public class PlatformCreator : PathSceneTool
 
         var offset = 0f;
         var vOffset = 0f;
+        var emptyPlatformCount = 5;
         for (int i = 0; i < sections.Length; i++)
         {
             if (sections[i] == null)
@@ -107,12 +108,16 @@ public class PlatformCreator : PathSceneTool
                 {
                     var pOffset = s * data.SideOffset - w * 0.5f;
                     var spawned = CreateRoadMesh(offset, data.Length, j, pOffset, vOffset, 2);
-                    if (j > 0 && s == chosenIndex)
+                    if (emptyPlatformCount <= 0 && s == chosenIndex)
                     {
                         Instantiate(collectiblePrefab, spawned.position + collectibleOffset, Quaternion.identity, spawned);
                     }
                 }
                 offset += data.Length;
+                if (emptyPlatformCount > 0)
+                {
+                    emptyPlatformCount--;
+                }
             }
             offset += sections[i].OffsetAfter;
             vOffset += sections[i].verticalOffset;

@@ -11,7 +11,7 @@ public class Collectible : MonoBehaviour
     {
         particle.transform.parent = null;
         particle.SetActive(true);
-        Destroy(particle, 5f);
+        Destroy(particle, 2f);
         Destroy(gameObject);
         PlayerController.Score += value;
     }
