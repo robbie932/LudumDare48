@@ -13,6 +13,8 @@ public class PlatformCreator : PathSceneTool
 {
     public static PlatformCreator instance;
     public static bool dirty;
+    public Vector3 collectibleOffset = Vector3.up * 2;
+    public Collectible collectiblePrefab;
 
     [Header("Get Settings")]
     public float[] Lengths = new float[3];
@@ -98,10 +100,15 @@ public class PlatformCreator : PathSceneTool
                 offset += data.Offset;
 
                 var w = (data.sideCount - 1) * data.SideOffset;
+                var chosenIndex = Random.Range(0, data.sideCount);
                 for (int s = 0; s < data.sideCount; s++)
                 {
                     var pOffset = s * data.SideOffset - w * 0.5f;
-                    CreateRoadMesh(offset, data.Length, j, pOffset, vOffset, 2);
+                    var spawned = CreateRoadMesh(offset, data.Length, j, pOffset, vOffset, 2);
+                    if (j > 0 && s == chosenIndex)
+                    {
+                        Instantiate(collectiblePrefab, spawned.position + collectibleOffset, Quaternion.identity, spawned);
+                    }
                 }
                 offset += data.Length;
             }
@@ -110,7 +117,7 @@ public class PlatformCreator : PathSceneTool
         }
     }
 
-    void CreateRoadMesh(float offset, float length, int platformIndex, float positionOffset, float verticalOffset, int numPoints)
+    Transform CreateRoadMesh(float offset, float length, int platformIndex, float positionOffset, float verticalOffset, int numPoints)
     {
         Vector3[] verts = new Vector3[numPoints * 8 + 4];
         Vector2[] uvs = new Vector2[verts.Length];
@@ -264,6 +271,7 @@ public class PlatformCreator : PathSceneTool
         go.AddComponent<MeshFilter>().sharedMesh = mesh;
         go.AddComponent<MeshRenderer>().sharedMaterial = mat;
         go.AddComponent<MeshCollider>().convex = true;
+        return go.transform;
     }
     /*private void OnDrawGizmos()
     {

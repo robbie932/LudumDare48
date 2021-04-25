@@ -11,6 +11,8 @@ partial class Game
 public partial class PlayerController : MonoBehaviour
 {
 
+    public static int Score;
+
     public static PlayerController instance;
 
     [SerializeField, Range(0f, 200f)]
