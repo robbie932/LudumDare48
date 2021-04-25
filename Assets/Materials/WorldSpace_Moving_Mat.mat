@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WorldSpace_cutout
-  m_Shader: {fileID: -6465566751694194690, guid: fac40226ddcaefd49b984bf81650b10b,
+  m_Name: WorldSpace_Moving_Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 0168592bb48f03444a4a854e6151efd0,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,17 +20,25 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_AEF8A333:
+    - Texture2D_501C8F6B:
+        m_Texture: {fileID: 2800000, guid: 47b70afbf86840d4cac808815b36ee32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_730F92AD:
         m_Texture: {fileID: 2800000, guid: b5dbc629d22702f4dbc709e13d5137bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Mask:
+    - Texture2D_FE25BEEB:
         m_Texture: {fileID: 2800000, guid: 41ce04250fba89e4aae81d64384e31ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _MaskSize: 100
+    - Vector1_D34A8E66: 100
+    - Vector1_EE83DF22: 0.5
     m_Colors:
-    - _MaskOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Tiling: {r: 0.005, g: 0.005, b: 0, a: 0}
+    - Color_A859CD83: {r: 1, g: 1, b: 1, a: 0}
+    - Vector2_1BC940D3: {r: 0.1, g: 0, b: 0, a: 0}
+    - Vector2_4C53150E: {r: 0.001, g: 0.001, b: 0, a: 0}
+    - Vector2_5F35D903: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_6D55D239: {r: 0.1, g: 0, b: 0, a: 0}
+    - Vector2_ED57066: {r: 0, g: 0, b: 0, a: 0}
