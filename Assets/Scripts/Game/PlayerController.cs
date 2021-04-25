@@ -42,6 +42,9 @@ public partial class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody body;
 
+    private RigidbodyConstraints onGround = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+    private RigidbodyConstraints inAir = RigidbodyConstraints.FreezeRotation;
+
     internal Vector3 pathPosition;
     internal Quaternion pathRotation;
 
@@ -173,6 +176,10 @@ public partial class PlayerController : MonoBehaviour
 
         if (OnGround)
         {
+            if (velocity.y <= 0)
+            {
+                body.constraints = onGround;
+            }
             jumpPhase = 0;
             if (groundContactCount > 1)
             {
@@ -181,6 +188,7 @@ public partial class PlayerController : MonoBehaviour
         }
         else
         {
+            body.constraints = inAir;
             contactNormal = Vector3.up;
         }
     }
@@ -220,6 +228,7 @@ public partial class PlayerController : MonoBehaviour
             //{
             //    jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
             //}
+            body.constraints = inAir;
             velocity.y = jumpSpeed;
         }
     }
