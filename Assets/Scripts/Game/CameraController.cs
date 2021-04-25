@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour
     public float positionLerpFactor, rotationLerpFactor;
     public Transform cameraTransform;
     public AnimationCurve shakeCurve;
+    public float sidewaysShakeFactor = 0.4f;
+
 
     private Quaternion rotation;
     private Vector3 offsetPosition;
@@ -32,20 +34,25 @@ public class CameraController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(-(offsetPosition - offset).normalized);
         }
     }
-    public void AddShake(Vector3 force, float shakeDuration)
+    public void AddShake(float xForce, float yForce, float shakeDuration)
     {
         StopAllCoroutines();
-        StartCoroutine(_Shake(force, shakeDuration));
+        StartCoroutine(_Shake(xForce, yForce, shakeDuration));
     }
 
-    private IEnumerator _Shake(Vector3 force, float shakeDuration)
+    private IEnumerator _Shake(float xForce, float yForce, float shakeDuration)
     {
         var t = 0f;
         while (t < shakeDuration)
         {
             t += Time.deltaTime;
             var a = t / shakeDuration;
-            cameraTransform.localPosition = Vector3.Lerp(Vector3.zero, force, shakeCurve.Evaluate(a));
+            var eval = shakeCurve.Evaluate(a);
+            var y = Mathf.Lerp(0, yForce, eval);
+            var point = Random.Range(-xForce, xForce);
+            var x = Mathf.Lerp(cameraTransform.localPosition.x, point, sidewaysShakeFactor);
+
+            cameraTransform.localPosition = new Vector3(x, y, 0);
             yield return null;
         }
     }
