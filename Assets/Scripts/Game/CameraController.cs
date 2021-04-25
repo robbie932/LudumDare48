@@ -22,12 +22,13 @@ public class CameraController : MonoBehaviour
 
     private Quaternion rotation;
     private Vector3 offsetPosition;
-
+    private float distance;
     private void OnValidate()
     {
+        instance = this;
+
         rotation = Quaternion.Euler(verticalAngle, 0, 0);
         offsetPosition = offset + rotation * (-Vector3.forward * length);
-
         if (!Application.isPlaying)
         {
             transform.position = offsetPosition;
@@ -69,9 +70,23 @@ public class CameraController : MonoBehaviour
         OnValidate();
     }
 
+    public void ResetDistance()
+    {
+        distance = 0;
+    }
+
     private void LateUpdate()
     {
-        var t = Game.Player.pathPosition + offsetPosition;
+        var point = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(distance);
+        var playerPos = Game.Player.transform.position;
+        playerPos.y = point.y;//flat
+        var dirToPlayer = playerPos - point;
+        var a = dirToPlayer.z / 10f;
+        var speed = Mathf.Lerp(0.5f, 2f, a);
+
+        distance += Game.Player.maxSpeed * speed * Time.deltaTime;
+
+        var t = point + offsetPosition;
         UpdateRotation(Game.Player.pathRotation.eulerAngles.y);
         transform.position = Vector3.Lerp(transform.position, t, positionLerpFactor);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationLerpFactor);

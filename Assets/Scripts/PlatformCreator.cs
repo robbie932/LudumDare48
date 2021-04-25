@@ -50,6 +50,8 @@ public class PlatformCreator : PathSceneTool
     [Header("Material settings")]
     public Material mat;
     public float textureTiling = 1;
+    public AnimationCurve platformMaterialAnimationCurve;
+    public float platformMaterialAnimationDuration = 0.4f;
 
     [HideInInspector]
     public PlatformDataObject[] sections;
@@ -269,8 +271,14 @@ public class PlatformCreator : PathSceneTool
         go.transform.position = center;
 
         go.AddComponent<MeshFilter>().sharedMesh = mesh;
-        go.AddComponent<MeshRenderer>().sharedMaterial = mat;
+        var rend = go.AddComponent<MeshRenderer>();
+        rend.sharedMaterial = mat;
         go.AddComponent<MeshCollider>().convex = true;
+        var platform = go.AddComponent<PlatformAnimation>();
+        platform.rend = rend;
+        platform.curve = platformMaterialAnimationCurve;
+        platform.duration = platformMaterialAnimationDuration;
+
         return go.transform;
     }
     /*private void OnDrawGizmos()

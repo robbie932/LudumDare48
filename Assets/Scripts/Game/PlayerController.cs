@@ -16,7 +16,7 @@ public partial class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     [SerializeField, Range(0f, 200f)]
-    float maxSpeed = 10f;
+    public float maxSpeed = 10f;
 
     [SerializeField, Range(0f, 200f)]
     float maxAcceleration = 10f, maxAirAcceleration = 1f;
@@ -56,6 +56,8 @@ public partial class PlayerController : MonoBehaviour
     bool OnGround => groundContactCount > 0;
     bool onGroundLast;
     private float fallOffJumpValid;
+    private float lastY;
+
     private bool IsFallTimeHelpValid => Time.time <= fallOffJumpValid && velocity.y < 0;
 
     int jumpPhase;
@@ -90,10 +92,11 @@ public partial class PlayerController : MonoBehaviour
 
         UpdateLeaningAnimations();
 
-        if (transform.position.y < -50)
+        if (transform.position.y < lastY - 50)
         {
             transform.position = Vector3.zero;
             velocity = Vector3.zero;
+            Game.Camera.ResetDistance();
             body.AddForce(Vector3.zero, ForceMode.VelocityChange);
         }
     }
@@ -154,6 +157,7 @@ public partial class PlayerController : MonoBehaviour
         if (onGroundLast && !OnGround)
         {
             fallOffJumpValid = Time.time + fallOffHelpTime;
+            lastY = body.position.y;
             //just fell
         }
         else if (!onGroundLast && OnGround)
@@ -207,13 +211,12 @@ public partial class PlayerController : MonoBehaviour
         {
             jumpPhase += 1;
             float jumpSpeed = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
-            float alignedSpeed = Vector3.Dot(velocity, contactNormal);
-            if (alignedSpeed > 0f)
-            {
-                jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
-            }
-            velocity.y = 0;
-            velocity += Vector3.up * jumpSpeed;
+            //float alignedSpeed = Vector3.Dot(velocity, contactNormal);
+            //if (alignedSpeed > 0f)
+            //{
+            //    jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
+            //}
+            velocity.y = jumpSpeed;
         }
     }
 
