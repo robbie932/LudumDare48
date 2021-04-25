@@ -15,6 +15,8 @@ public partial class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
+    [Header("PhysX")]
+
     [SerializeField, Range(0f, 200f)]
     public float maxSpeed = 10f;
 
@@ -61,7 +63,7 @@ public partial class PlayerController : MonoBehaviour
     private float fallOffJumpValid;
     private float lastY;
 
-    private bool IsFallTimeHelpValid => Time.time <= fallOffJumpValid && velocity.y < 0;
+    private bool IsFallTimeHelpValid => Time.time <= fallOffJumpValid && velocity.y <= 0;
 
     int jumpPhase;
 
@@ -113,7 +115,10 @@ public partial class PlayerController : MonoBehaviour
             desiredJump = false;
             Jump();
         }
-        AdjustVerticalFallSpeed();
+        else
+        {
+            AdjustVerticalFallSpeed();
+        }
 
         body.velocity = velocity;
         ClearState();
@@ -230,6 +235,7 @@ public partial class PlayerController : MonoBehaviour
             //}
             body.constraints = inAir;
             velocity.y = jumpSpeed;
+            groundContactCount = 0;
         }
     }
 
@@ -241,6 +247,18 @@ public partial class PlayerController : MonoBehaviour
     void OnCollisionStay(Collision collision)
     {
         EvaluateCollision(collision);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 12)
+        {
+            //obstacle
+            if (Input.GetAxis("Vertical") > 0)
+            {
+
+            }
+        }
     }
 
     void EvaluateCollision(Collision collision)
