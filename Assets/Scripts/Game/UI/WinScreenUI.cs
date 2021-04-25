@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WinScreenUI : MonoBehaviour
@@ -51,6 +52,11 @@ public class WinScreenUI : MonoBehaviour
         }
 
         clicked = true;
+        StopAllCoroutines();
+        Time.timeScale = 1;
+
+        var sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene((sceneIndex + 1) % (SceneManager.sceneCount + 1));
         //load next level
     }
 }

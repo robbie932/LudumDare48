@@ -110,8 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 5200293584983171590}
   value: 10
-  offset: {x: 0, y: 2, z: 0}
-  rend: {fileID: 0}
 --- !u!1001 &5200293584983266570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,7 +297,8 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114122306394498882, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
 --- !u!1 &5200293584983171590 stripped
 GameObject:
@@ -428,7 +427,8 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 150
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114123706304290510, guid: 290c7afb0a247d64ba31f4fb85b73165, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 290c7afb0a247d64ba31f4fb85b73165, type: 3}
 --- !u!4 &5204579023753555847 stripped
 Transform:
