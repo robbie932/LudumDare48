@@ -42,13 +42,11 @@ public class PlatformCreator : PathSceneTool
 
     [Header("Road settings")]
     public float roadWidth = .4f;
-    [Range(0, .5f)]
+    [Range(0, 2f)]
     public float thickness = .15f;
 
     [Header("Material settings")]
-    public Material top;
-    public Material side;
-    public Material front;
+    public Material mat;
     public float textureTiling = 1;
 
     [HideInInspector]
@@ -165,6 +163,14 @@ public class PlatformCreator : PathSceneTool
             // Set uv on y axis to path time (0 at start of path, up to 1 at end of path)
             uvs[vertIndex + 0] = new Vector2(0, length * textureTiling * a);
             uvs[vertIndex + 1] = new Vector2(1, length * textureTiling * a);
+            uvs[vertIndex + 2] = new Vector2(1, length * textureTiling * a);
+            uvs[vertIndex + 3] = new Vector2(0, length * textureTiling * a);
+
+
+            uvs[vertIndex + 4] = new Vector2(0, length * textureTiling * a);
+            uvs[vertIndex + 5] = new Vector2(0, length * textureTiling * a);
+            uvs[vertIndex + 6] = new Vector2(1, length * textureTiling * a);
+            uvs[vertIndex + 7] = new Vector2(1, length * textureTiling * a);
 
             // Top of road normals
             normals[vertIndex + 0] = localUp;
@@ -205,10 +211,15 @@ public class PlatformCreator : PathSceneTool
         verts[vertIndex + 2] = verts[2];
         verts[vertIndex + 3] = verts[3];
 
-        normals[vertIndex] = localForward;
-        normals[vertIndex + 1] = localForward;
-        normals[vertIndex + 2] = localForward;
-        normals[vertIndex + 3] = localForward;
+        uvs[vertIndex] = new Vector2(0, 1);
+        uvs[vertIndex + 1] = new Vector2(0, 0);
+        uvs[vertIndex + 2] = new Vector2(1, 1);
+        uvs[vertIndex + 3] = new Vector2(1, 0);
+
+        normals[vertIndex] = -localForward;
+        normals[vertIndex + 1] = -localForward;
+        normals[vertIndex + 2] = -localForward;
+        normals[vertIndex + 3] = -localForward;
 
         frontFaceTris[0] = vertIndex + 2;
         frontFaceTris[1] = vertIndex;
@@ -224,19 +235,14 @@ public class PlatformCreator : PathSceneTool
         mesh.SetUVs(0, uvs);
         mesh.SetNormals(normals);
 
-        mesh.subMeshCount = 3;
-        mesh.SetTriangles(underRoadTriangles.Concat(roadTriangles).ToArray(), 0);
-        mesh.SetTriangles(sideOfRoadTriangles, 1);
-        mesh.SetTriangles(frontFaceTris, 2);
-
+        mesh.SetTriangles(underRoadTriangles.Concat(roadTriangles).Concat(sideOfRoadTriangles).Concat(frontFaceTris).ToArray(), 0);
         mesh.RecalculateBounds();
-        //mesh.UploadMeshData(false);
 
         var go = new GameObject("Platform" + platformIndex.ToString());
         go.layer = gameObject.layer;
         go.transform.parent = transform;
         go.AddComponent<MeshFilter>().sharedMesh = mesh;
-        go.AddComponent<MeshRenderer>().sharedMaterials = new[] { top, side, front };
+        go.AddComponent<MeshRenderer>().sharedMaterial = mat;
         go.AddComponent<MeshCollider>().convex = true;
     }
     /*private void OnDrawGizmos()
