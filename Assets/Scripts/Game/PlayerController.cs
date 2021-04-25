@@ -116,7 +116,7 @@ public partial class PlayerController : MonoBehaviour
         var path = Game.PlatformCreator.pathCreator.path;
         var closestDistOnPath = path.GetClosestDistanceAlongPath(transform.position);
         pathPosition = path.GetPointAtDistance(closestDistOnPath);
-        pathRotation = path.GetRotationAtDistance(closestDistOnPath) * Quaternion.Euler(0, 0, 90);
+        pathRotation = path.GetRotationAtDistance(closestDistOnPath);
     }
 
 

@@ -140,7 +140,7 @@ public class PlatformCreator : PathSceneTool
             p.y = -verticalOffset;
 
             var pos = p;
-            var rot = Quaternion.Lerp(path.GetRotationAtDistance(offset), path.GetRotationAtDistance(offset + length), a) * Quaternion.Euler(0, 0, 90);
+            var rot = Quaternion.Lerp(path.GetRotationAtDistance(offset), path.GetRotationAtDistance(offset + length), a);
             pos += rot * Vector3.right * positionOffset;
 
             var localUp = rot * Vector3.up;
@@ -172,10 +172,10 @@ public class PlatformCreator : PathSceneTool
             uvs[vertIndex + 3] = new Vector2(0, length * textureTiling * a);
 
 
-            uvs[vertIndex + 4] = new Vector2(0, length * textureTiling * a);
-            uvs[vertIndex + 5] = new Vector2(0, length * textureTiling * a);
-            uvs[vertIndex + 6] = new Vector2(1, length * textureTiling * a);
-            uvs[vertIndex + 7] = new Vector2(1, length * textureTiling * a);
+            uvs[vertIndex + 4] = new Vector2(length * textureTiling * a, 1);
+            uvs[vertIndex + 5] = new Vector2(length * textureTiling * a, 1);
+            uvs[vertIndex + 6] = new Vector2(length * textureTiling * a, 0);
+            uvs[vertIndex + 7] = new Vector2(length * textureTiling * a, 0);
 
             // Top of road normals
             normals[vertIndex + 0] = localUp;
@@ -217,8 +217,8 @@ public class PlatformCreator : PathSceneTool
         verts[vertIndex + 3] = verts[3];
 
         uvs[vertIndex] = new Vector2(0, 1);
-        uvs[vertIndex + 1] = new Vector2(0, 0);
-        uvs[vertIndex + 2] = new Vector2(1, 1);
+        uvs[vertIndex + 1] = new Vector2(1, 1);
+        uvs[vertIndex + 2] = new Vector2(0, 0);
         uvs[vertIndex + 3] = new Vector2(1, 0);
 
         normals[vertIndex] = -localForward;
