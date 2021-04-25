@@ -47,9 +47,6 @@ public partial class PlayerController : MonoBehaviour
     private RigidbodyConstraints onGround = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
     private RigidbodyConstraints inAir = RigidbodyConstraints.FreezeRotation;
 
-    internal Vector3 pathPosition;
-    internal Quaternion pathRotation;
-
     Vector3 velocity, desiredVelocity;
 
     Vector3 contactNormal;
@@ -93,8 +90,6 @@ public partial class PlayerController : MonoBehaviour
 
         desiredJump |= Input.GetButtonDown("Jump");
 
-        UpdatePathData();
-
         UpdateLeaningAnimations();
 
         if (transform.position.y < lastY - 80)
@@ -122,14 +117,6 @@ public partial class PlayerController : MonoBehaviour
 
         body.velocity = velocity;
         ClearState();
-    }
-
-    public void UpdatePathData()
-    {
-        var path = Game.PlatformCreator.pathCreator.path;
-        var closestDistOnPath = path.GetClosestDistanceAlongPath(transform.position);
-        pathPosition = path.GetPointAtDistance(closestDistOnPath);
-        pathRotation = path.GetRotationAtDistance(closestDistOnPath);
     }
 
 
@@ -200,8 +187,8 @@ public partial class PlayerController : MonoBehaviour
 
     void AdjustVelocity()
     {
-        var right = pathRotation * Vector3.right;
-        var forward = pathRotation * Vector3.forward;
+        var right = Game.Camera.curvePointRot * Vector3.right;
+        var forward = Game.Camera.curvePointRot * Vector3.forward;
 
         Vector3 xAxis = ProjectOnContactPlane(right).normalized;
         Vector3 zAxis = ProjectOnContactPlane(forward).normalized;
