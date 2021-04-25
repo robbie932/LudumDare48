@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DropSpacing
   m_EditorClassIdentifier: 
   data: []
-  offsetAfter: 2
+  offsetAfter: 1
   verticalOffset: 17
   globalDisplaySettingsFoldout: 0

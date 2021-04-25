@@ -42,6 +42,8 @@ public class PlatformCreator : PathSceneTool
         return from[Mathf.Clamp((int)type, 0, from.Length - 1)];
     }
 
+    public bool areSoOpen;
+
     [Header("Road settings")]
     public float roadWidth = .4f;
     [Range(0, 2f)]
