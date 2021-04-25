@@ -14,5 +14,6 @@ public class Collectible : MonoBehaviour
         Destroy(particle, 2f);
         Destroy(gameObject);
         PlayerController.Score += value;
+        CollectablesUI.instance.UpdateText(PlayerController.Score);
     }
 }
