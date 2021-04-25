@@ -11,7 +11,6 @@ partial class Game
 }
 public class PlatformCreator : PathSceneTool
 {
-
     public static PlatformCreator instance;
     public static bool dirty;
 
