@@ -59,7 +59,6 @@ public partial class PlayerController : MonoBehaviour
 
     float minGroundDotProduct;
 
-
     void OnValidate()
     {
         minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
@@ -157,6 +156,7 @@ public partial class PlayerController : MonoBehaviour
         }
         else if (!onGroundLast && OnGround)
         {
+            CameraController.instance.AddShake(Vector3.down * landShakeAmount, 0.2f);
             landingVfx.Play();
         }
         onGroundLast = OnGround;

@@ -15,7 +15,8 @@ partial class PlayerController
     private float leanAmount;
     [Header("FX")]
     public VisualEffect landingVfx;
-    
+    public float landShakeAmount = 2;
+
     private void UpdateLeaningAnimations()
     {
         var normalizedX = desiredVelocity.x / maxSpeed;
