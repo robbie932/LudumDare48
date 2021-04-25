@@ -13,14 +13,22 @@ MonoBehaviour:
   m_Name: DropLanding_4
   m_EditorClassIdentifier: 
   data:
-  - length: 4
+  - length: 0
     offset: 0
     sideOffset: 1
     sideCount: 4
-  - length: 4
+  - length: 0
+    offset: 0
+    sideOffset: 1
+    sideCount: 4
+  - length: 0
+    offset: 0
+    sideOffset: 1
+    sideCount: 4
+  - length: 0
     offset: 0
     sideOffset: 1
     sideCount: 4
   offsetAfter: 1
   verticalOffset: 0
-  globalDisplaySettingsFoldout: 1
+  globalDisplaySettingsFoldout: 0
