@@ -20,6 +20,7 @@ partial class PlayerController
         leanAmount = Mathf.Lerp(leanAmount, a, leanSpeed);
         animator.SetFloat("Lean", leanAmount);
         animator.SetBool("OnGround", OnGround);
+        animator.SetBool("ShouldRoll", Random.value >= 0.8f);
         var t = Quaternion.Euler(normalizedZVel * forwardLean, 0, normalizedX * -maxRotation);
         model.localRotation = Quaternion.Lerp(model.localRotation, t, leanSpeed);
     }
