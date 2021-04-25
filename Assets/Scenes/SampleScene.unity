@@ -26599,6 +26599,7 @@ MonoBehaviour:
   maxRotation: 15
   forwardLean: 10
   leanSpeed: 0.3
+  rollChance: 0.1
   maxSpeed: 17
   maxAcceleration: 200
   maxAirAcceleration: 200
