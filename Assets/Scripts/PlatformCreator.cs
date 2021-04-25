@@ -11,6 +11,7 @@ partial class Game
 }
 public class PlatformCreator : PathSceneTool
 {
+
     public static PlatformCreator instance;
     public static bool dirty;
 
@@ -141,6 +142,7 @@ public class PlatformCreator : PathSceneTool
 
             var pos = p;
             var rot = Quaternion.Lerp(path.GetRotationAtDistance(offset), path.GetRotationAtDistance(offset + length), a);
+            rot = Quaternion.Euler(0, rot.eulerAngles.y, 0);
             pos += rot * Vector3.right * positionOffset;
 
             var localUp = rot * Vector3.up;
