@@ -127,6 +127,10 @@ public partial class PlayerController : MonoBehaviour
 
     private void AdjustVerticalFallSpeed()
     {
+        if (OnGround)
+        {
+            return;
+        }
         if (velocity.y < 0)
         {
             velocity += Physics.gravity * ((fallMulltiplier - 1) * Time.fixedDeltaTime);
