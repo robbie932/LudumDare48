@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1243d33a5ab02444f88f58248edac505, type: 3}
-  m_Name: DropLanding_3
+  m_Name: S_1x4
   m_EditorClassIdentifier: 
   data:
   - length: 0
     offset: 0
-    sideOffset: 1
-    sideCount: 3
+    sideOffset: 2
+    sideCount: 1
   - length: 0
     offset: 0
-    sideOffset: 1
-    sideCount: 3
+    sideOffset: 2
+    sideCount: 1
   - length: 0
     offset: 0
-    sideOffset: 1
-    sideCount: 3
+    sideOffset: 2
+    sideCount: 1
   - length: 0
     offset: 0
-    sideOffset: 1
-    sideCount: 3
-  offsetAfter: 0
+    sideOffset: 2
+    sideCount: 1
+  offsetAfter: 1
   verticalOffset: 0
-  globalDisplaySettingsFoldout: 0
+  globalDisplaySettingsFoldout: 1
