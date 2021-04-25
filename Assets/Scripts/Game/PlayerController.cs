@@ -7,7 +7,7 @@ partial class Game
     public static PlayerController Player => PlayerController.instance;
 }
 
-public class PlayerController : MonoBehaviour
+public partial class PlayerController : MonoBehaviour
 {
 
     public static PlayerController instance;
@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
         desiredJump |= Input.GetButtonDown("Jump");
 
         UpdatePathData();
+
+        UpdateLeaningAnimations();
 
         if (transform.position.y < -50)
         {
