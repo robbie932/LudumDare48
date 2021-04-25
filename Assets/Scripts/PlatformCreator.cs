@@ -84,6 +84,7 @@ public class PlatformCreator : PathSceneTool
         }
 
         var offset = 0f;
+        var vOffset = 0f;
         for (int i = 0; i < sections.Length; i++)
         {
             if (sections[i] == null)
@@ -100,15 +101,16 @@ public class PlatformCreator : PathSceneTool
                 for (int s = 0; s < data.sideCount; s++)
                 {
                     var pOffset = s * data.SideOffset - w * 0.5f;
-                    CreateRoadMesh(offset, data.Length, j, pOffset, 2);
+                    CreateRoadMesh(offset, data.Length, j, pOffset, vOffset, 2);
                 }
                 offset += data.Length;
             }
             offset += sections[i].OffsetAfter;
+            vOffset += sections[i].verticalOffset;
         }
     }
 
-    void CreateRoadMesh(float offset, float length, int platformIndex, float positionOffset, int numPoints)
+    void CreateRoadMesh(float offset, float length, int platformIndex, float positionOffset, float verticalOffset, int numPoints)
     {
         Vector3[] verts = new Vector3[numPoints * 8 + 4];
         Vector2[] uvs = new Vector2[verts.Length];
@@ -134,8 +136,11 @@ public class PlatformCreator : PathSceneTool
         {
             var a = (float)i / (numPoints - 1);
 
-            var pos = Vector3.Lerp(path.GetPointAtDistance(offset), path.GetPointAtDistance(offset + length), a);
-            var rot = Quaternion.Lerp(path.GetRotationAtDistance(offset), path.GetRotationAtDistance(offset + length), a);
+            var p = Vector3.Lerp(path.GetPointAtDistance(offset), path.GetPointAtDistance(offset + length), a);
+            p.y = -verticalOffset;
+
+            var pos = p;
+            var rot = Quaternion.Lerp(path.GetRotationAtDistance(offset), path.GetRotationAtDistance(offset + length), a) * Quaternion.Euler(0, 0, 90);
             pos += rot * Vector3.right * positionOffset;
 
             var localUp = rot * Vector3.up;
@@ -172,13 +177,13 @@ public class PlatformCreator : PathSceneTool
             uvs[vertIndex + 6] = new Vector2(1, length * textureTiling * a);
             uvs[vertIndex + 7] = new Vector2(1, length * textureTiling * a);
 
-                // Top of road normals
+            // Top of road normals
             normals[vertIndex + 0] = localUp;
             normals[vertIndex + 1] = localUp;
-                // Bottom of road normals
+            // Bottom of road normals
             normals[vertIndex + 2] = -localUp;
             normals[vertIndex + 3] = -localUp;
-                // Sides of road normals 
+            // Sides of road normals 
             normals[vertIndex + 4] = -localRight;
             normals[vertIndex + 5] = localRight;
             normals[vertIndex + 6] = -localRight;

@@ -31,5 +31,9 @@ public class PlatformDataObject : ScriptableObject
     public PlatformData[] data;
     public PlatformData.SizeType offsetAfter;
     public float OffsetAfter => PlatformCreator.instance.GetOffset(offsetAfter);
+
+    public float verticalOffset = 0;
+
+    [HideInInspector]
     public bool globalDisplaySettingsFoldout;
 }

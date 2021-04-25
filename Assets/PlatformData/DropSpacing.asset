@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1243d33a5ab02444f88f58248edac505, type: 3}
-  m_Name: L_Spacing
+  m_Name: DropSpacing
   m_EditorClassIdentifier: 
   data: []
-  offsetAfter: 4
+  offsetAfter: 1
+  verticalOffset: 20
   globalDisplaySettingsFoldout: 1
