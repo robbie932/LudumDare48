@@ -132,13 +132,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_02.1
       objectReference: {fileID: 0}
+    - target: {fileID: 141242, guid: ebf9cc577b34f514c8ec790bec0af3e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446442, guid: ebf9cc577b34f514c8ec790bec0af3e3, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 446442, guid: ebf9cc577b34f514c8ec790bec0af3e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 446442, guid: ebf9cc577b34f514c8ec790bec0af3e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -189,13 +193,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_01.3 Tornado area
       objectReference: {fileID: 0}
+    - target: {fileID: 155226, guid: 3d4e8c42ed9e3e64aa57dd5fd160611f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 467972, guid: 3d4e8c42ed9e3e64aa57dd5fd160611f, type: 3}
       propertyPath: m_RootOrder
       value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 467972, guid: 3d4e8c42ed9e3e64aa57dd5fd160611f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 780
       objectReference: {fileID: 0}
     - target: {fileID: 467972, guid: 3d4e8c42ed9e3e64aa57dd5fd160611f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -246,13 +254,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.2
       objectReference: {fileID: 0}
+    - target: {fileID: 150362, guid: 8906de79e38d722448ed84e0c648ed37, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 468508, guid: 8906de79e38d722448ed84e0c648ed37, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 468508, guid: 8906de79e38d722448ed84e0c648ed37, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 468508, guid: 8906de79e38d722448ed84e0c648ed37, type: 3}
       propertyPath: m_LocalPosition.y
@@ -303,13 +315,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_02.1.3 Smoke Noise trail
       objectReference: {fileID: 0}
+    - target: {fileID: 1728977734348228, guid: 9c325b962bbbf044b8c70186b0d753f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4831891910094932, guid: 9c325b962bbbf044b8c70186b0d753f6, type: 3}
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4831891910094932, guid: 9c325b962bbbf044b8c70186b0d753f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 440
       objectReference: {fileID: 0}
     - target: {fileID: 4831891910094932, guid: 9c325b962bbbf044b8c70186b0d753f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -360,13 +376,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_03
       objectReference: {fileID: 0}
+    - target: {fileID: 164948, guid: c17963bbb4ed8bb43ab629df2aa6f6fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 479734, guid: c17963bbb4ed8bb43ab629df2aa6f6fb, type: 3}
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 479734, guid: c17963bbb4ed8bb43ab629df2aa6f6fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 479734, guid: c17963bbb4ed8bb43ab629df2aa6f6fb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -417,13 +437,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.4.1 Ribbon Rainbow point
       objectReference: {fileID: 0}
+    - target: {fileID: 1212994969585448, guid: 7ba99b73bc7237f41866af9ee14ac99e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4744113804565948, guid: 7ba99b73bc7237f41866af9ee14ac99e, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4744113804565948, guid: 7ba99b73bc7237f41866af9ee14ac99e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4744113804565948, guid: 7ba99b73bc7237f41866af9ee14ac99e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -474,13 +498,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_02.1.2 Smoke Noise
       objectReference: {fileID: 0}
+    - target: {fileID: 1964706472991120, guid: 222eb84c209dc0c4b833bfce66d69d54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4360052354515650, guid: 222eb84c209dc0c4b833bfce66d69d54, type: 3}
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4360052354515650, guid: 222eb84c209dc0c4b833bfce66d69d54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: 4360052354515650, guid: 222eb84c209dc0c4b833bfce66d69d54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -531,13 +559,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_02
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7c22cd57a15e6fb479c6d3b3c4060e88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c22cd57a15e6fb479c6d3b3c4060e88, type: 3}
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c22cd57a15e6fb479c6d3b3c4060e88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c22cd57a15e6fb479c6d3b3c4060e88, type: 3}
       propertyPath: m_LocalPosition.y
@@ -588,13 +620,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_04.1 Darkness
       objectReference: {fileID: 0}
+    - target: {fileID: 198158, guid: 6e98c279586111a44a36697e55a54ddc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 440830, guid: 6e98c279586111a44a36697e55a54ddc, type: 3}
       propertyPath: m_RootOrder
       value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 440830, guid: 6e98c279586111a44a36697e55a54ddc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 440830, guid: 6e98c279586111a44a36697e55a54ddc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -645,13 +681,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_02 Butterfly
       objectReference: {fileID: 0}
+    - target: {fileID: 191940, guid: 24714939b6d6b0848a23dbabb24615c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 480816, guid: 24714939b6d6b0848a23dbabb24615c0, type: 3}
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 480816, guid: 24714939b6d6b0848a23dbabb24615c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 340
       objectReference: {fileID: 0}
     - target: {fileID: 480816, guid: 24714939b6d6b0848a23dbabb24615c0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -702,13 +742,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.5.1 Tentacle point
       objectReference: {fileID: 0}
+    - target: {fileID: 1592711153756366, guid: b29c1c092b2b341438abc1f2b36f1213, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4920297717707848, guid: b29c1c092b2b341438abc1f2b36f1213, type: 3}
       propertyPath: m_RootOrder
       value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4920297717707848, guid: b29c1c092b2b341438abc1f2b36f1213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 4920297717707848, guid: b29c1c092b2b341438abc1f2b36f1213, type: 3}
       propertyPath: m_LocalPosition.y
@@ -759,17 +803,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.2 Six
       objectReference: {fileID: 0}
+    - target: {fileID: 186250, guid: 0d500c5e8ad781840a06fc8f512f27ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 498550, guid: 0d500c5e8ad781840a06fc8f512f27ca, type: 3}
       propertyPath: m_RootOrder
       value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 498550, guid: 0d500c5e8ad781840a06fc8f512f27ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 880
       objectReference: {fileID: 0}
     - target: {fileID: 498550, guid: 0d500c5e8ad781840a06fc8f512f27ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 498550, guid: 0d500c5e8ad781840a06fc8f512f27ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -816,13 +864,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.1.3 Noise
       objectReference: {fileID: 0}
+    - target: {fileID: 1093753670220012, guid: 290c7afb0a247d64ba31f4fb85b73165, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4862567263759098, guid: 290c7afb0a247d64ba31f4fb85b73165, type: 3}
       propertyPath: m_RootOrder
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4862567263759098, guid: 290c7afb0a247d64ba31f4fb85b73165, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 820
       objectReference: {fileID: 0}
     - target: {fileID: 4862567263759098, guid: 290c7afb0a247d64ba31f4fb85b73165, type: 3}
       propertyPath: m_LocalPosition.y
@@ -873,13 +925,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.3 Domain
       objectReference: {fileID: 0}
+    - target: {fileID: 137858, guid: 07646d420e43aea44892c3a6320a52ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 435226, guid: 07646d420e43aea44892c3a6320a52ed, type: 3}
       propertyPath: m_RootOrder
       value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 435226, guid: 07646d420e43aea44892c3a6320a52ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 435226, guid: 07646d420e43aea44892c3a6320a52ed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -930,13 +986,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.3 Fairydust
       objectReference: {fileID: 0}
+    - target: {fileID: 108354, guid: 72949fa39c284664683eb9778cbd227d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 417676, guid: 72949fa39c284664683eb9778cbd227d, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 417676, guid: 72949fa39c284664683eb9778cbd227d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 420
       objectReference: {fileID: 0}
     - target: {fileID: 417676, guid: 72949fa39c284664683eb9778cbd227d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -987,13 +1047,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_03.1 Rave Party
       objectReference: {fileID: 0}
+    - target: {fileID: 125668, guid: a038b6842bf8b8c48978a6ca7ff191ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 410220, guid: a038b6842bf8b8c48978a6ca7ff191ed, type: 3}
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 410220, guid: a038b6842bf8b8c48978a6ca7ff191ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 620
       objectReference: {fileID: 0}
     - target: {fileID: 410220, guid: a038b6842bf8b8c48978a6ca7ff191ed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1044,13 +1108,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.5 Tentacle trail
       objectReference: {fileID: 0}
+    - target: {fileID: 175022, guid: 47121ae891ef7614c9f45ce4b4f8fcd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 449056, guid: 47121ae891ef7614c9f45ce4b4f8fcd6, type: 3}
       propertyPath: m_RootOrder
       value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 449056, guid: 47121ae891ef7614c9f45ce4b4f8fcd6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 449056, guid: 47121ae891ef7614c9f45ce4b4f8fcd6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1101,13 +1169,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_02.2 Seaweed
       objectReference: {fileID: 0}
+    - target: {fileID: 122212, guid: a0c033842badc44499cd942553067136, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 484832, guid: a0c033842badc44499cd942553067136, type: 3}
       propertyPath: m_RootOrder
       value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 484832, guid: a0c033842badc44499cd942553067136, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: 484832, guid: a0c033842badc44499cd942553067136, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1158,13 +1230,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.3.1 Fairydust Noise
       objectReference: {fileID: 0}
+    - target: {fileID: 1525317160642690, guid: f980f35b2665e65409a449e52e961c09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4185448897458748, guid: f980f35b2665e65409a449e52e961c09, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4185448897458748, guid: f980f35b2665e65409a449e52e961c09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4185448897458748, guid: f980f35b2665e65409a449e52e961c09, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1215,13 +1291,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_02.1
       objectReference: {fileID: 0}
+    - target: {fileID: 193942, guid: 9b7dd4ad1de43e843ab5041fd9ced9f8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 458742, guid: 9b7dd4ad1de43e843ab5041fd9ced9f8, type: 3}
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 458742, guid: 9b7dd4ad1de43e843ab5041fd9ced9f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 460
       objectReference: {fileID: 0}
     - target: {fileID: 458742, guid: 9b7dd4ad1de43e843ab5041fd9ced9f8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1272,13 +1352,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.5 Tentacle point
       objectReference: {fileID: 0}
+    - target: {fileID: 175022, guid: acfea269b5aec3142aeec88a60895c02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 449056, guid: acfea269b5aec3142aeec88a60895c02, type: 3}
       propertyPath: m_RootOrder
       value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 449056, guid: acfea269b5aec3142aeec88a60895c02, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 940
       objectReference: {fileID: 0}
     - target: {fileID: 449056, guid: acfea269b5aec3142aeec88a60895c02, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1329,13 +1413,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_01.1.1 Dual Ribbon
       objectReference: {fileID: 0}
+    - target: {fileID: 176264, guid: ed27e61ea1a83e64fb6c3472640c846f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 456138, guid: ed27e61ea1a83e64fb6c3472640c846f, type: 3}
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 456138, guid: ed27e61ea1a83e64fb6c3472640c846f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 456138, guid: ed27e61ea1a83e64fb6c3472640c846f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1385,6 +1473,10 @@ PrefabInstance:
     - target: {fileID: 1592711153756366, guid: 2a2762eb559a5e24cb94e81034b36a34, type: 3}
       propertyPath: m_Name
       value: Spiral_02.5.1 Tentacle trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592711153756366, guid: 2a2762eb559a5e24cb94e81034b36a34, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4920297717707848, guid: 2a2762eb559a5e24cb94e81034b36a34, type: 3}
       propertyPath: m_RootOrder
@@ -1443,13 +1535,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.1 Dual Ribbon
       objectReference: {fileID: 0}
+    - target: {fileID: 141434, guid: 92741d35de61d3548a1a78f80df11ce9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 469550, guid: 92741d35de61d3548a1a78f80df11ce9, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 469550, guid: 92741d35de61d3548a1a78f80df11ce9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 469550, guid: 92741d35de61d3548a1a78f80df11ce9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1500,13 +1596,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_05.2 Fairydust Noise
       objectReference: {fileID: 0}
+    - target: {fileID: 1052326988759172, guid: 633191961f9a8314697e96499a6b3a35, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4961150606553154, guid: 633191961f9a8314697e96499a6b3a35, type: 3}
       propertyPath: m_RootOrder
       value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 4961150606553154, guid: 633191961f9a8314697e96499a6b3a35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 4961150606553154, guid: 633191961f9a8314697e96499a6b3a35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1557,13 +1657,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_02.2
       objectReference: {fileID: 0}
+    - target: {fileID: 116074, guid: 073f2d7207c2a664f921850c7e8783db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 425376, guid: 073f2d7207c2a664f921850c7e8783db, type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 425376, guid: 073f2d7207c2a664f921850c7e8783db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 580
       objectReference: {fileID: 0}
     - target: {fileID: 425376, guid: 073f2d7207c2a664f921850c7e8783db, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1614,13 +1718,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_01.2 Tornado tall
       objectReference: {fileID: 0}
+    - target: {fileID: 108504, guid: d18380a6098943a4a879b5a0f3826c9d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 458636, guid: d18380a6098943a4a879b5a0f3826c9d, type: 3}
       propertyPath: m_RootOrder
       value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 458636, guid: d18380a6098943a4a879b5a0f3826c9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 760
       objectReference: {fileID: 0}
     - target: {fileID: 458636, guid: d18380a6098943a4a879b5a0f3826c9d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1671,13 +1779,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_05.1 Fairydust cheap
       objectReference: {fileID: 0}
+    - target: {fileID: 127272, guid: d37d5104f2717d34c84d3acbf55785fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 427526, guid: d37d5104f2717d34c84d3acbf55785fb, type: 3}
       propertyPath: m_RootOrder
       value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 427526, guid: d37d5104f2717d34c84d3acbf55785fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 680
       objectReference: {fileID: 0}
     - target: {fileID: 427526, guid: d37d5104f2717d34c84d3acbf55785fb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1728,13 +1840,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.4 Ribbon trail
       objectReference: {fileID: 0}
+    - target: {fileID: 1133885287175046, guid: 3cf6963cae433e24e881eea0d6a44b22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4350118125672364, guid: 3cf6963cae433e24e881eea0d6a44b22, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4350118125672364, guid: 3cf6963cae433e24e881eea0d6a44b22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4350118125672364, guid: 3cf6963cae433e24e881eea0d6a44b22, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1785,13 +1901,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_05 Fairydust
       objectReference: {fileID: 0}
+    - target: {fileID: 127686, guid: 39d083a5f8e95874fb6aa07cb8a3beb2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 451020, guid: 39d083a5f8e95874fb6aa07cb8a3beb2, type: 3}
       propertyPath: m_RootOrder
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 451020, guid: 39d083a5f8e95874fb6aa07cb8a3beb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 451020, guid: 39d083a5f8e95874fb6aa07cb8a3beb2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1842,13 +1962,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile_01 Noise
       objectReference: {fileID: 0}
+    - target: {fileID: 1899724461870960, guid: 59df0f563f95c764e87867ff8ddcdb83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4285754348467742, guid: 59df0f563f95c764e87867ff8ddcdb83, type: 3}
       propertyPath: m_RootOrder
       value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4285754348467742, guid: 59df0f563f95c764e87867ff8ddcdb83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 720
       objectReference: {fileID: 0}
     - target: {fileID: 4285754348467742, guid: 59df0f563f95c764e87867ff8ddcdb83, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1899,13 +2023,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.1
       objectReference: {fileID: 0}
+    - target: {fileID: 112396, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 461792, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
       propertyPath: m_RootOrder
       value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 461792, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 860
       objectReference: {fileID: 0}
     - target: {fileID: 461792, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1956,13 +2084,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_01.1 Dual Ribbon
       objectReference: {fileID: 0}
+    - target: {fileID: 195744, guid: 9b76ca16778282d43b0dcb458f08802b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 429664, guid: 9b76ca16778282d43b0dcb458f08802b, type: 3}
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 429664, guid: 9b76ca16778282d43b0dcb458f08802b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 429664, guid: 9b76ca16778282d43b0dcb458f08802b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2013,13 +2145,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.4.1 Ribbon Rainbow trail
       objectReference: {fileID: 0}
+    - target: {fileID: 1383041297011760, guid: 1478ae28b6fad154a8e5dc2e2555a7ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4532970814003370, guid: 1478ae28b6fad154a8e5dc2e2555a7ac, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4532970814003370, guid: 1478ae28b6fad154a8e5dc2e2555a7ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4532970814003370, guid: 1478ae28b6fad154a8e5dc2e2555a7ac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2070,13 +2206,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_01.1 Tornado
       objectReference: {fileID: 0}
+    - target: {fileID: 197712, guid: 1dbd11d2ca3f29640b6bd21d7b6393d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 449018, guid: 1dbd11d2ca3f29640b6bd21d7b6393d2, type: 3}
       propertyPath: m_RootOrder
       value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 449018, guid: 1dbd11d2ca3f29640b6bd21d7b6393d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 740
       objectReference: {fileID: 0}
     - target: {fileID: 449018, guid: 1dbd11d2ca3f29640b6bd21d7b6393d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2127,13 +2267,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_01
       objectReference: {fileID: 0}
+    - target: {fileID: 103616, guid: 5c175b754ee603c47a5fbe48aff5d65b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 467852, guid: 5c175b754ee603c47a5fbe48aff5d65b, type: 3}
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 467852, guid: 5c175b754ee603c47a5fbe48aff5d65b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 467852, guid: 5c175b754ee603c47a5fbe48aff5d65b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2184,13 +2328,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.6 Noise
       objectReference: {fileID: 0}
+    - target: {fileID: 1774791834312446, guid: db791f5a5b572c44e872174c12c2f2ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4530964436243426, guid: db791f5a5b572c44e872174c12c2f2ce, type: 3}
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4530964436243426, guid: db791f5a5b572c44e872174c12c2f2ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4530964436243426, guid: db791f5a5b572c44e872174c12c2f2ce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2241,13 +2389,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_02.3 ink sink
       objectReference: {fileID: 0}
+    - target: {fileID: 1359345918756548, guid: 721828800f41bb840b0b3916d19228f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4339778350405240, guid: 721828800f41bb840b0b3916d19228f5, type: 3}
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4339778350405240, guid: 721828800f41bb840b0b3916d19228f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4339778350405240, guid: 721828800f41bb840b0b3916d19228f5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2298,13 +2450,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.1.2 Fairydust
       objectReference: {fileID: 0}
+    - target: {fileID: 124582, guid: 7210ff34512b3a547bb82851f8d81172, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 483982, guid: 7210ff34512b3a547bb82851f8d81172, type: 3}
       propertyPath: m_RootOrder
       value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 483982, guid: 7210ff34512b3a547bb82851f8d81172, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 483982, guid: 7210ff34512b3a547bb82851f8d81172, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2355,13 +2511,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_02.1.1 Smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 117696, guid: 046853cc0b2b7a7429cfdec1915e1640, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 439706, guid: 046853cc0b2b7a7429cfdec1915e1640, type: 3}
       propertyPath: m_RootOrder
       value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 439706, guid: 046853cc0b2b7a7429cfdec1915e1640, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 439706, guid: 046853cc0b2b7a7429cfdec1915e1640, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2412,13 +2572,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4462f6159ce56f54aa3d847cdf8a3291, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 4462f6159ce56f54aa3d847cdf8a3291, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 4462f6159ce56f54aa3d847cdf8a3291, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 4462f6159ce56f54aa3d847cdf8a3291, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2469,13 +2633,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_04.2 Darkness
       objectReference: {fileID: 0}
+    - target: {fileID: 106358, guid: d7bef4a7a970f0b4ca3fcda740f48f48, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 485980, guid: d7bef4a7a970f0b4ca3fcda740f48f48, type: 3}
       propertyPath: m_RootOrder
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 485980, guid: d7bef4a7a970f0b4ca3fcda740f48f48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 485980, guid: d7bef4a7a970f0b4ca3fcda740f48f48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2526,13 +2694,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_03 Megido
       objectReference: {fileID: 0}
+    - target: {fileID: 173736, guid: b82449563c8abbc47955dd85ec1c8048, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 401380, guid: b82449563c8abbc47955dd85ec1c8048, type: 3}
       propertyPath: m_RootOrder
       value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 401380, guid: b82449563c8abbc47955dd85ec1c8048, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 520
       objectReference: {fileID: 0}
     - target: {fileID: 401380, guid: b82449563c8abbc47955dd85ec1c8048, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2583,13 +2755,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_02.1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 121268, guid: df8009dc85777cd40a227ce4d9a59d6e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 413598, guid: df8009dc85777cd40a227ce4d9a59d6e, type: 3}
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 413598, guid: df8009dc85777cd40a227ce4d9a59d6e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 413598, guid: df8009dc85777cd40a227ce4d9a59d6e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2640,13 +2816,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.4 Domain
       objectReference: {fileID: 0}
+    - target: {fileID: 122498, guid: 5f20420a36c817f4f8328369cb4883a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 402308, guid: 5f20420a36c817f4f8328369cb4883a8, type: 3}
       propertyPath: m_RootOrder
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 402308, guid: 5f20420a36c817f4f8328369cb4883a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 920
       objectReference: {fileID: 0}
     - target: {fileID: 402308, guid: 5f20420a36c817f4f8328369cb4883a8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2697,13 +2877,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.4 Ribbon point
       objectReference: {fileID: 0}
+    - target: {fileID: 192822, guid: 5aca12a25b34970479a5b05210886a83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 489682, guid: 5aca12a25b34970479a5b05210886a83, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 489682, guid: 5aca12a25b34970479a5b05210886a83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 489682, guid: 5aca12a25b34970479a5b05210886a83, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2754,13 +2938,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charge_01.5 Chain
       objectReference: {fileID: 0}
+    - target: {fileID: 114618, guid: 8f3052adaa74dfd4cb36c5818c58df60, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 457154, guid: 8f3052adaa74dfd4cb36c5818c58df60, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 457154, guid: 8f3052adaa74dfd4cb36c5818c58df60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 457154, guid: 8f3052adaa74dfd4cb36c5818c58df60, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2811,13 +2999,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liberate_04.3 Darkness quick
       objectReference: {fileID: 0}
+    - target: {fileID: 143500, guid: a716a4964e991f04288cf251ff85bd89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 470120, guid: a716a4964e991f04288cf251ff85bd89, type: 3}
       propertyPath: m_RootOrder
       value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 470120, guid: a716a4964e991f04288cf251ff85bd89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 660
       objectReference: {fileID: 0}
     - target: {fileID: 470120, guid: a716a4964e991f04288cf251ff85bd89, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2868,13 +3060,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiral_02.1.3 Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 170352, guid: 303fa73578986ac4a82283eeb1edc654, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446916, guid: 303fa73578986ac4a82283eeb1edc654, type: 3}
       propertyPath: m_RootOrder
       value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 446916, guid: 303fa73578986ac4a82283eeb1edc654, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 840
       objectReference: {fileID: 0}
     - target: {fileID: 446916, guid: 303fa73578986ac4a82283eeb1edc654, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2925,13 +3121,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drag_01 Warp-strike Noise
       objectReference: {fileID: 0}
+    - target: {fileID: 1418895334298486, guid: 22cfde83280f83746836923e3e5ac64a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4042546746478394, guid: 22cfde83280f83746836923e3e5ac64a, type: 3}
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4042546746478394, guid: 22cfde83280f83746836923e3e5ac64a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 4042546746478394, guid: 22cfde83280f83746836923e3e5ac64a, type: 3}
       propertyPath: m_LocalPosition.y
