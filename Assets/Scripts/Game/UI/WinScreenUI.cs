@@ -27,6 +27,21 @@ public class WinScreenUI : MonoBehaviour
     {
         anim.Play();
     }
+    public void OnEnd()
+    {
+        StartCoroutine(TheEnd(1f));
+    }
+    private IEnumerator TheEnd(float duration)
+    {
+        var t = 0f;
+        while (t < duration)
+        {
+            t += Time.unscaledDeltaTime;
+            var a = t / duration;
+            Time.timeScale = Mathf.Max(0, 1 - a);
+            yield return null;
+        }
+    }
 
     private void OnClick()
     {
