@@ -21,20 +21,19 @@ public class PlatformCreatorEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
 
-        var dist = 0f;
-        offsets = new float[creator.sections.Length];
-        for (int i = 0; i < creator.sections.Length; i++)
-        {
-            offsets[i] = dist;
-            PlatformDataObject item = creator.sections[i];
-            foreach (var data in item.data)
-            {
-                dist += data.Offset + data.Length;
-            }
-            dist += item.OffsetAfter;
-        }
+        //var dist = 0f;
+        //offsets = new float[creator.sections.Length];
+        //for (int i = 0; i < creator.sections.Length; i++)
+        //{
+        //    offsets[i] = dist;
+        //    PlatformDataObject item = creator.sections[i];
+        //    foreach (var data in item.data)
+        //    {
+        //        dist += data.Offset + data.Length;
+        //    }
+        //    dist += item.OffsetAfter;
+        //}
 
 
         serializedObject.Update();
@@ -53,6 +52,7 @@ public class PlatformCreatorEditor : Editor
             dirty = false;
             creator.CreateMultipleMeshes();
         }
+        base.OnInspectorGUI();
     }
 
     void DrawSections()
@@ -94,12 +94,6 @@ public class PlatformCreatorEditor : Editor
                                 dirty = true;
                                 break;
                             }
-                        }
-                        if (GUILayout.Button("c", EditorStyles.miniButtonMid, GUILayout.Width(buttonSize)))
-                        {
-                            sectionsProp.InsertArrayElementAtIndex(i);
-                            dirty = true;
-                            break;
                         }
                         if (GUILayout.Button("c", EditorStyles.miniButtonMid, GUILayout.Width(buttonSize)))
                         {
