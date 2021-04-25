@@ -5,23 +5,33 @@ using UnityEngine;
 public class ObjectFloater : MonoBehaviour
 {
 
-    public float RotationSpeed = 0.1f;
+    public float RotationSpeed = 0.0f;
+    public Vector3 StartRotation;
+    public Vector3 RotationDirection; // Max 1, 1, 1
+    public bool randomStartX;
+    public int RandomStartX;
+    public int RandomStartY;
+    public int RandomStartZ;
+    public bool DoRandomRotate;
 
-    public float dir1;
-    public float dir2;
-    public float dir3;
-    Vector3 RotationDirection;
+
+
     // Start is called before the first frame update
-    void Start()
-    {
-        dir1 = Random.Range(0, RotationSpeed);
-        dir2 = Random.Range(0, RotationSpeed);
-        dir3 = Random.Range(0, RotationSpeed);
+    void Start() {
+
+        Vector3 AdditionalStartRotation = new Vector3(Random.Range(0, RotationSpeed * RandomStartX), Random.Range(0, RotationSpeed * RandomStartY), Random.Range(0, RotationSpeed * RandomStartZ));
+        this.transform.Rotate(StartRotation+ AdditionalStartRotation, Space.World);
+
+
+        if (DoRandomRotate) {
+            RotationDirection = new Vector3(Random.Range(0, RotationSpeed), Random.Range(0, RotationSpeed), Random.Range(0, RotationSpeed));
+        }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        this.transform.Rotate(dir1, dir2, dir3, Space.World);
+    void Update() {
+        if (RotationSpeed > 0) {
+            this.transform.Rotate(RotationDirection * RotationSpeed, Space.World);
+        }
     }
 }

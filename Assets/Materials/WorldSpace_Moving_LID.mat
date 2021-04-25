@@ -32,7 +32,8 @@ Material:
     - Boolean_3853BEA6: 0
     - Vector1_C0F1847C: 100
     m_Colors:
-    - Color_295C3A3B: {r: 1, g: 1, b: 1, a: 0}
+    - Color_295C3A3B: {r: 0.5190666, g: 1, b: 0.21226418, a: 0}
+    - Color_83DF0281: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_42A40802: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_9CABC08B: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _UVSpeed: {r: 0.05, g: 0.1, b: 0, a: 0}
