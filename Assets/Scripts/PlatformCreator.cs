@@ -41,7 +41,7 @@ public class PlatformCreator : PathSceneTool
         }
         return from[Mathf.Clamp((int)type, 0, from.Length - 1)];
     }
-
+    [HideInInspector]
     public bool areSoOpen;
 
     [Header("Road settings")]

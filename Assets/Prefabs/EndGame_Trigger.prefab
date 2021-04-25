@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2368660403283561177}
   - component: {fileID: 2368660403283561170}
   - component: {fileID: 2368660403283561173}
+  - component: {fileID: 7117577655863265709}
   m_Layer: 11
   m_Name: EndGame_Trigger
   m_TagString: Untagged
@@ -123,3 +124,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89dc33282d08c64985caf25bd9313e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &7117577655863265709
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368660403283561176}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
