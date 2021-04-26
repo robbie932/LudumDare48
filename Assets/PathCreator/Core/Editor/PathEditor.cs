@@ -470,6 +470,19 @@ namespace PathCreationEditor
                 }
             }
 
+            if (e.keyCode == KeyCode.F && handleIndexToDisplayAsTransform != -1)
+            {
+                e.Use();
+                var pos = bezierPath.GetPoint(handleIndexToDisplayAsTransform);
+                var go = new GameObject();
+                go.hideFlags = HideFlags.DontSave;
+                go.transform.position = pos;
+                Selection.activeGameObject = go;
+                SceneView.FrameLastActiveSceneView();
+                Selection.activeGameObject = creator.gameObject;
+                DestroyImmediate(go);
+            }
+
             // Control click or backspace/delete to remove point
             if (e.keyCode == KeyCode.Backspace || e.keyCode == KeyCode.Delete || ((e.control || e.command) && e.type == EventType.MouseDown && e.button == 0))
             {
