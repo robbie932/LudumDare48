@@ -52,8 +52,8 @@ public partial class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody body;
 
-    private RigidbodyConstraints onGround = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
-    private RigidbodyConstraints inAir = RigidbodyConstraints.FreezeRotation;
+    private RigidbodyConstraints onGround =  RigidbodyConstraints.FreezePositionY;
+    private RigidbodyConstraints inAir = RigidbodyConstraints.None;
 
     Vector3 velocity, desiredVelocity;
 
@@ -97,6 +97,7 @@ public partial class PlayerController : MonoBehaviour
     }
     private void Start()
     {
+        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition) + new Vector3(0, 1, 1);
         SetDebugStartPos();
         transform.position = startingPosition;
     }
@@ -137,9 +138,13 @@ public partial class PlayerController : MonoBehaviour
     void Update()
     {
         UpdateLeaningAnimations();
-
+        transform.rotation = Quaternion.Euler(0, Game.Camera.curvePointRot.eulerAngles.y, 0);
         if (transform.position.y < lastY - 80)
         {
+            transform.position = startingPosition;
+            velocity = Vector3.zero;
+            body.AddForce(Vector3.zero, ForceMode.VelocityChange);
+            Game.Camera.ResetDistance();
             ResetToLevelStart();
         }
     }

@@ -55,6 +55,8 @@ MonoBehaviour:
   rollChance: 0.1
   landingVfx: {fileID: 8143163729925976138}
   landShakeAmount: 0.4
+  HERE: 
+  startingPathPosition: 0
   maxSpeed: 23
   maxAcceleration: 200
   maxAirAcceleration: 200
@@ -80,7 +82,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!135 &8143163729469360353
 SphereCollider:
@@ -227,13 +229,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8143163730285656621}
-  m_LocalRotation: {x: -0.3133905, y: -0.5559779, z: -0.083390266, w: 0.7653242}
+  m_LocalRotation: {x: -0.39706105, y: -0.5404235, z: -0.119018264, w: 0.7322019}
   m_LocalPosition: {x: -0.47400004, y: 0.10500035, z: 0.109999776}
   m_LocalScale: {x: 0.6000001, y: 0.09999996, z: 1.499999}
   m_Children: []
   m_Father: {fileID: 8751449756192487483}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -34.919003, y: -76.936005, z: 15.624001}
+  m_LocalEulerAnglesHint: {x: -45.243004, y: -81.788, z: 21.222}
 --- !u!33 &8143163730285656626
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -316,7 +318,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1903898a57f519b4aaaa74ebaf226102,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.62
+      value: -0.553
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1903898a57f519b4aaaa74ebaf226102,
         type: 3}

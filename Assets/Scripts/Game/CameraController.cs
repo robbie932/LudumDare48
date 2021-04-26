@@ -60,6 +60,7 @@ public class CameraController : MonoBehaviour
             cameraTransform.localPosition = new Vector3(x, y, 0);
             yield return null;
         }
+            cameraTransform.localPosition = Vector3.zero;
     }
 
     private void UpdateRotation(float hRot)
@@ -82,24 +83,25 @@ public class CameraController : MonoBehaviour
         distance = Game.Player.startingPathPosition;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         curvePoint = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(distance);
         curvePointRot = PlatformCreator.instance.pathCreator.path.GetRotationAtDistance(distance);
+
         var playerPos = Game.Player.transform.position;
         playerPos.y = curvePoint.y;//flat
         var dirToPlayer = playerPos - curvePoint;
-        var a = dirToPlayer.z / 10f;
-        var speed = Mathf.Lerp(0.5f, 2f, a);
 
-        distance += Game.Player.maxSpeed * speed * Time.deltaTime;
+        distance += Game.Player.maxSpeed * dirToPlayer.z * Time.fixedDeltaTime;
 
         var t = curvePoint + offsetPosition;
         UpdateRotation(curvePointRot.eulerAngles.y);
         transform.position = Vector3.Lerp(transform.position, t, positionLerpFactor);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationLerpFactor);
+    }
 
-
-        cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, Vector3.zero, 0.3f);
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(curvePoint, 1f);
     }
 }
