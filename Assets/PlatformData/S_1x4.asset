@@ -29,6 +29,6 @@ MonoBehaviour:
     offset: 0
     sideOffset: 2
     sideCount: 1
-  offsetAfter: 1
+  offsetAfter: 2
   verticalOffset: 0
   globalDisplaySettingsFoldout: 1
