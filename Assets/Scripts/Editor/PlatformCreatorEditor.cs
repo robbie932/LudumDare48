@@ -17,7 +17,6 @@ public class PlatformCreatorEditor : Editor
         creator = target as PlatformCreator;
     }
     int buttonSize = 32;
-    private float[] offsets;
 
     public override void OnInspectorGUI()
     {
@@ -101,6 +100,13 @@ public class PlatformCreatorEditor : Editor
                             dirty = true;
                             break;
                         }
+
+                        if (GUILayout.Button("f", EditorStyles.miniButtonMid, GUILayout.Width(buttonSize)))
+                        {
+                            FocusOnPart(i);
+                            break;
+                        }
+                        
                         if (GUILayout.Button("x", EditorStyles.miniButtonRight, GUILayout.Width(buttonSize)))
                         {
                             sectionsProp.DeleteArrayElementAtIndex(i);
@@ -119,6 +125,31 @@ public class PlatformCreatorEditor : Editor
         }
         EditorGUILayout.EndVertical();
         EditorGUIUtility.labelWidth = lw;
+    }
+
+    void FocusOnPart(int index)
+    {
+        var dist = 0f;
+        for (int i = 0; i < index; i++)
+        {
+            PlatformDataObject item = creator.sections[i];
+            foreach (var data in item.data)
+            {
+                dist += data.Offset + data.Length;
+            }
+            dist += item.OffsetAfter;
+        }
+
+
+        var pos = creator.pathCreator.path.GetPointAtDistance(dist);
+        var go = new GameObject();
+        go.hideFlags = HideFlags.DontSave;
+        go.transform.position = pos;
+        Selection.activeGameObject = go;
+        SceneView.FrameLastActiveSceneView();
+        Selection.activeGameObject = creator.gameObject;
+        DestroyImmediate(go);
+
     }
     void DrawGlobalDisplaySettingsInspector()
     {
