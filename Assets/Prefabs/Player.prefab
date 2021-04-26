@@ -54,7 +54,7 @@ MonoBehaviour:
   leanSpeed: 0.3
   rollChance: 0.1
   landingVfx: {fileID: 8143163729925976138}
-  landShakeAmount: 0.6
+  landShakeAmount: 0.4
   maxSpeed: 23
   maxAcceleration: 200
   maxAirAcceleration: 200
