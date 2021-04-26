@@ -22,8 +22,8 @@ public partial class PlayerController : MonoBehaviour
 
     [Header("PhysX")]
     public float startingPathPosition;
-
     public float startingYPosition;
+    public float startingXPosition;
 
     [SerializeField, Range(0f, 200f)]
     public float maxSpeed = 10f;
@@ -168,13 +168,26 @@ public partial class PlayerController : MonoBehaviour
 
     void SetDebugStartPos() {
         startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
+        
+        startingPosition.x = startingPosition.x + startingXPosition;
         startingPosition.y = startingPosition.y + startingYPosition;
+
 
         //Reset the rigidbody velocity..
         body.isKinematic = true;
         TinyPause();
         body.isKinematic = false;
     }
+
+    //Vector3 GetRoadAxis() {
+    //    RaycastHit hit;
+    //    var ray = transform.position+ new Vector3(0,20,0);
+    //
+    //    if (Physics.Raycast(ray, hit)) {
+    //        print("hit pos = %i"+hit.point);
+    //    }
+    //    return hit.point;
+    //}
 
     void FixedUpdate()
     {
