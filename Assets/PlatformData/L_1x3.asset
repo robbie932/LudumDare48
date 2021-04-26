@@ -15,7 +15,7 @@ MonoBehaviour:
   data:
   - length: 4
     offset: 0
-    sideOffset: 2
+    sideOffset: 0
     sideCount: 1
   - length: 4
     offset: 0

@@ -31,4 +31,4 @@ MonoBehaviour:
     sideCount: 3
   offsetAfter: 0
   verticalOffset: 0
-  globalDisplaySettingsFoldout: 0
+  globalDisplaySettingsFoldout: 1
