@@ -23,6 +23,8 @@ public partial class PlayerController : MonoBehaviour
     [Header("PhysX")]
     public float startingPathPosition;
 
+    public float startingYPosition;
+
     [SerializeField, Range(0f, 200f)]
     public float maxSpeed = 10f;
 
@@ -96,6 +98,7 @@ public partial class PlayerController : MonoBehaviour
     private void Start()
     {
         startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition) + new Vector3(0, 1, 1);
+        SetDebugStartPos();
         transform.position = startingPosition;
     }
 
@@ -142,7 +145,35 @@ public partial class PlayerController : MonoBehaviour
             velocity = Vector3.zero;
             body.AddForce(Vector3.zero, ForceMode.VelocityChange);
             Game.Camera.ResetDistance();
+            ResetToLevelStart();
         }
+    }
+
+    void ResetToLevelStart() {
+        
+
+        if (startingPathPosition > 0) {
+            print("Starting at startingPathPosition.%i"+velocity);
+            SetDebugStartPos();
+        }
+        
+        transform.position = startingPosition;
+        velocity = Vector3.zero;
+        Game.Camera.ResetDistance();
+        body.AddForce(Vector3.zero, ForceMode.VelocityChange);
+    }
+
+    IEnumerator TinyPause() {
+        yield return new WaitForFixedUpdate();
+    }
+
+    void SetDebugStartPos() {
+        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
+        startingPosition.y = startingPosition.y + startingYPosition;
+
+        body.isKinematic = true;
+        TinyPause();
+        body.isKinematic = false;
     }
 
     void FixedUpdate()
