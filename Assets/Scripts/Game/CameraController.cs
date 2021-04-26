@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     private Quaternion rotation;
     private Vector3 offsetPosition;
-    private float distance;
+    internal float distance;
 
     internal Vector3 curvePoint;
     internal Quaternion curvePointRot;
@@ -73,10 +73,13 @@ public class CameraController : MonoBehaviour
         instance = this;
         OnValidate();
     }
-
+    private void Start()
+    {
+        distance = Game.Player.startingPathPosition;
+    }
     public void ResetDistance()
     {
-        distance = 0;
+        distance = Game.Player.startingPathPosition;
     }
 
     private void LateUpdate()

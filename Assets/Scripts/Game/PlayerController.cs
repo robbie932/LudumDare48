@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 partial class Game
 {
@@ -10,12 +12,16 @@ partial class Game
 
 public partial class PlayerController : MonoBehaviour
 {
+    public string HERE;
+    GameInput input;
 
     public static int Score;
 
     public static PlayerController instance;
 
+
     [Header("PhysX")]
+    public float startingPathPosition;
 
     [SerializeField, Range(0f, 200f)]
     public float maxSpeed = 10f;
@@ -65,6 +71,8 @@ public partial class PlayerController : MonoBehaviour
     int jumpPhase;
 
     float minGroundDotProduct;
+    private bool holdingJump;
+    private Vector3 startingPosition;
 
     void OnValidate()
     {
@@ -75,26 +83,62 @@ public partial class PlayerController : MonoBehaviour
     {
         instance = this;
         OnValidate();
+
+        input = new GameInput();
+        input.Player.Jump.started += ctx => OnJump();
+        input.Player.Jump.canceled += ctx => OnReleaseJump();
+
+        input.Player.Move.performed += ctx => OnMove(ctx.ReadValue<float>());
+        input.Player.Move.canceled += ctx => OnStopMove();
+
+        SetDesVel();
+    }
+    private void Start()
+    {
+        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
+        transform.position = startingPosition;
     }
 
+    private void OnStopMove()
+    {
+        SetDesVel();
+    }
+
+    private void OnJump()
+    {
+        desiredJump |= true;
+        holdingJump = true;
+    }
+    private void OnReleaseJump()
+    {
+        holdingJump = false;
+    }
+    private void OnMove(float axis)
+    {
+        SetDesVel(axis);
+    }
+
+    private void SetDesVel(float horizontal = 0)
+    {
+        desiredVelocity = new Vector3(horizontal, 0f, 1) * maxSpeed;
+    }
+
+    private void OnEnable()
+    {
+        input.Enable();
+    }
+    void OnDisable()
+    {
+        input.Disable();
+    }
 
     void Update()
     {
-        Vector2 playerInput;
-        playerInput.x = Input.GetAxis("Horizontal");
-        playerInput.y = 1;
-        //playerInput = Vector2.ClampMagnitude(playerInput, 1f);
-
-        desiredVelocity =
-            new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
-
-        desiredJump |= Input.GetButtonDown("Jump");
-
         UpdateLeaningAnimations();
 
         if (transform.position.y < lastY - 80)
         {
-            transform.position = Vector3.zero;
+            transform.position = startingPosition;
             velocity = Vector3.zero;
             Game.Camera.ResetDistance();
             body.AddForce(Vector3.zero, ForceMode.VelocityChange);
@@ -132,7 +176,7 @@ public partial class PlayerController : MonoBehaviour
         }
         else if (velocity.y > 0)
         {
-            if (!Input.GetButton("Jump"))
+            if (!holdingJump)
             {
                 velocity += Physics.gravity * ((lowJumpMulltiplier - 1) * Time.fixedDeltaTime);
             }
@@ -240,11 +284,6 @@ public partial class PlayerController : MonoBehaviour
     {
         if (other.gameObject.layer == 12)
         {
-            //obstacle
-            if (Input.GetAxis("Vertical") > 0)
-            {
-
-            }
         }
     }
 
