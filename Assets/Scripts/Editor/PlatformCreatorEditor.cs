@@ -65,7 +65,7 @@ public class PlatformCreatorEditor : Editor
 
             for (int i = 0; i < sectionsProp.arraySize; i++)
             {
-                if (creator.sections[i].verticalOffset != 0)
+                if (creator.sections[i]!= null && creator.sections[i].verticalOffset != 0)
                 {
                     EditorGUILayout.Space();
                 }
@@ -137,6 +137,10 @@ public class PlatformCreatorEditor : Editor
         for (int i = 0; i < index; i++)
         {
             PlatformDataObject item = creator.sections[i];
+            if (item == null)
+            {
+                return;
+            }
             foreach (var data in item.data)
             {
                 dist += data.Offset + data.Length;
