@@ -146,9 +146,8 @@ public partial class PlayerController : MonoBehaviour
 
     void ResetToLevelStart() {
         
-
+        //Only for testing the track...
         if (startingPathPosition > 0) {
-            print("Starting at startingPathPosition.%i"+velocity);
             SetDebugStartPos();
         }
         
@@ -166,6 +165,7 @@ public partial class PlayerController : MonoBehaviour
         startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
         startingPosition.y = startingPosition.y + startingYPosition;
 
+        //Reset the rigidbody velocity..
         body.isKinematic = true;
         TinyPause();
         body.isKinematic = false;
