@@ -97,8 +97,7 @@ public partial class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
-        startingPosition.y = startingPosition.y + startingYPosition;
+        SetDebugStartPos();
         transform.position = startingPosition;
     }
 
@@ -141,11 +140,35 @@ public partial class PlayerController : MonoBehaviour
 
         if (transform.position.y < lastY - 80)
         {
-            transform.position = startingPosition;
-            velocity = Vector3.zero;
-            Game.Camera.ResetDistance();
-            body.AddForce(Vector3.zero, ForceMode.VelocityChange);
+            ResetToLevelStart();
         }
+    }
+
+    void ResetToLevelStart() {
+        
+
+        if (startingPathPosition > 0) {
+            print("Starting at startingPathPosition.%i"+velocity);
+            SetDebugStartPos();
+        }
+        
+        transform.position = startingPosition;
+        velocity = Vector3.zero;
+        Game.Camera.ResetDistance();
+        body.AddForce(Vector3.zero, ForceMode.VelocityChange);
+    }
+
+    IEnumerator TinyPause() {
+        yield return new WaitForFixedUpdate();
+    }
+
+    void SetDebugStartPos() {
+        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
+        startingPosition.y = startingPosition.y + startingYPosition;
+
+        body.isKinematic = true;
+        TinyPause();
+        body.isKinematic = false;
     }
 
     void FixedUpdate()
