@@ -15,7 +15,18 @@ public class ObjectFloater : MonoBehaviour
     float CurrentYPos_World;
     float SinVal;
 
+    public Vector3 scaleDir;
+    public float scaleMovement;
+    public float scaleSpeed = 1;
+    public AnimationCurve scaleCurve;
+    private Vector3 startScale;
+
+
+
+
     private void Start() {
+        startScale = transform.localScale;
+
         if (RandomRotationSpeeds) {
             int FlipX = GetRandomBoolAsInt();
             int FlipY = GetRandomBoolAsInt();
@@ -48,5 +59,12 @@ public class ObjectFloater : MonoBehaviour
             transform.position = new Vector3(transform.position.x, CurrentYPos_World + (SinVal * FloatingHeight), transform.position.z);
             SinVal = Mathf.Sin(Time.time * BobSpeed );
         }
+
+        if (scaleSpeed == 0)
+        {
+            return;
+        }
+        var a = (Time.time * scaleSpeed) % 1f;
+        transform.localScale = startScale + scaleDir * (scaleMovement * scaleCurve.Evaluate(a));
     }
 }
