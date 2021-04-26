@@ -54,9 +54,10 @@ MonoBehaviour:
   leanSpeed: 0.3
   rollChance: 0.1
   landingVfx: {fileID: 8143163729925976138}
-  landShakeAmount: 0.4
+  landShakeAmount: 0.3
   HERE: 
   startingPathPosition: 0
+  startingYPosition: 0
   maxSpeed: 23
   maxAcceleration: 200
   maxAirAcceleration: 200
@@ -81,7 +82,7 @@ Rigidbody:
   m_AngularDrag: 0.01
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!135 &8143163729469360353

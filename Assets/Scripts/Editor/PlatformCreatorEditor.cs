@@ -65,6 +65,10 @@ public class PlatformCreatorEditor : Editor
 
             for (int i = 0; i < sectionsProp.arraySize; i++)
             {
+                if (creator.sections[i].verticalOffset != 0)
+                {
+                    EditorGUILayout.Space();
+                }
                 var current = sectionsProp.GetArrayElementAtIndex(i);
                 EditorGUILayout.BeginHorizontal();
                 {
@@ -106,7 +110,7 @@ public class PlatformCreatorEditor : Editor
                             FocusOnPart(i);
                             break;
                         }
-                        
+
                         if (GUILayout.Button("x", EditorStyles.miniButtonRight, GUILayout.Width(buttonSize)))
                         {
                             sectionsProp.DeleteArrayElementAtIndex(i);

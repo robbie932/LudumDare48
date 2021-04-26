@@ -52,8 +52,8 @@ public partial class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody body;
 
-    private RigidbodyConstraints onGround =  RigidbodyConstraints.FreezePositionY;
-    private RigidbodyConstraints inAir = RigidbodyConstraints.None;
+    private RigidbodyConstraints onGround = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+    private RigidbodyConstraints inAir = RigidbodyConstraints.FreezeRotation;
 
     Vector3 velocity, desiredVelocity;
 
@@ -236,7 +236,7 @@ public partial class PlayerController : MonoBehaviour
         }
         else if (!onGroundLast && OnGround)
         {
-            CameraController.instance.AddShake(0.5f, landShakeAmount, 0.2f);
+            CameraController.instance.AddShake(0.2f, landShakeAmount, 0.3f);
             landingVfx.Play();
         }
         onGroundLast = OnGround;
