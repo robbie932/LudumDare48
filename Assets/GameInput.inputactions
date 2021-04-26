@@ -112,7 +112,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Joystick",
+                    "name": "JoystickLeft",
                     "id": "d40c91d6-028d-4848-9362-873d3c2b50e1",
                     "path": "1DAxis",
                     "interactions": "",
@@ -136,6 +136,39 @@
                 {
                     "name": "positive",
                     "id": "26ac0a71-a816-455e-9c32-2c272939939b",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "JoystickRight",
+                    "id": "562330fd-21ef-43b7-9cc0-344349469f54",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "1acfac0b-6a3e-4e70-8780-739abe4b7c49",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "d908bcf5-bf65-4e8d-9c2b-eafc93d9a701",
                     "path": "<Gamepad>/rightStick/right",
                     "interactions": "",
                     "processors": "",

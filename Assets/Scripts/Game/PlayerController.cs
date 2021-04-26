@@ -95,7 +95,7 @@ public partial class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
+        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition) + new Vector3(0, 1, 1);
         transform.position = startingPosition;
     }
 
