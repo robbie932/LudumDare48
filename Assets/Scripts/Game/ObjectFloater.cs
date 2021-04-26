@@ -17,7 +17,7 @@ public class ObjectFloater : MonoBehaviour
 
     private void Start() {
         if (RandomRotationSpeeds) {
-            int FlipX = GetRandomBoolAsInt();print(FlipX);
+            int FlipX = GetRandomBoolAsInt();
             int FlipY = GetRandomBoolAsInt();
             int FlipZ = GetRandomBoolAsInt();
 
