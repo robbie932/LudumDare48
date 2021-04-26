@@ -688,7 +688,7 @@ namespace PathCreationEditor
                             handleIndexToDisplayAsTransform = -1; // disable move tool if clicking on point under move tool
                         }
                         else
-                        {
+                        { 
                             handleIndexToDisplayAsTransform = i;
                         }
                     }

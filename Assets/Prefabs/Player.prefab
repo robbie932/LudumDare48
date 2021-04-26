@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8143163729469360157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.99}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8143163729925976137}
@@ -54,7 +54,7 @@ MonoBehaviour:
   leanSpeed: 0.3
   rollChance: 0.1
   landingVfx: {fileID: 8143163729925976138}
-  landShakeAmount: 0.6
+  landShakeAmount: 0.4
   maxSpeed: 23
   maxAcceleration: 200
   maxAirAcceleration: 200
@@ -93,7 +93,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8143163729925976132
 GameObject:
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8143163729925976132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8143163729469360355}
@@ -316,7 +316,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1903898a57f519b4aaaa74ebaf226102,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.41
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1903898a57f519b4aaaa74ebaf226102,
         type: 3}
