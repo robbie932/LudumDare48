@@ -24,19 +24,6 @@ public class PlatformCreatorEditor : Editor
         base.OnInspectorGUI();
 
         var dist = 0f;
-        offsets = new float[creator.sections.Length];
-        for (int i = 0; i < creator.sections.Length; i++)
-        {
-            offsets[i] = dist;
-            PlatformDataObject item = creator.sections[i];
-            foreach (var data in item.data)
-            {
-                dist += data.Offset + data.Length;
-            }
-            dist += item.OffsetAfter;
-        }
-
-
         serializedObject.Update();
         GUILayout.Space(20);
         if (GUILayout.Button("Update"))

@@ -289,6 +289,22 @@ public class PlatformCreator : PathSceneTool
         return go.transform;
     }
 
+#if UNITY_EDITOR
+    [ContextMenu("Straighten")]
+    private void Ass() {
+        for (int i = 0; i < pathCreator.bezierPath.NumPoints; i++) {
+            var pos = pathCreator.bezierPath.GetPoint(i);
+            pos.x = 0;
+            pos.y = 0;
+            pos.z = i * (pathCreator.path.length / pathCreator.bezierPath.NumPoints );
+            pathCreator.bezierPath.MovePoint(i, pos);
+
+        }
+
+        
+        //UnityEditor.Undo.RegisterCompleteObjectUndo(pathCreator, "Straighten");
+    }
+#endif
     /*private void OnDrawGizmos()
     {
         for (int i = 0; i < platforms.Length; i++)
