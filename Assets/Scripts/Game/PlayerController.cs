@@ -23,6 +23,8 @@ public partial class PlayerController : MonoBehaviour
     [Header("PhysX")]
     public float startingPathPosition;
 
+    public float startingYPosition;
+
     [SerializeField, Range(0f, 200f)]
     public float maxSpeed = 10f;
 
@@ -96,6 +98,7 @@ public partial class PlayerController : MonoBehaviour
     private void Start()
     {
         startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
+        startingPosition.y = startingPosition.y + startingYPosition;
         transform.position = startingPosition;
     }
 
