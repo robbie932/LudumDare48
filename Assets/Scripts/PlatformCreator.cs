@@ -109,7 +109,7 @@ public class PlatformCreator : PathSceneTool
                 for (int s = 0; s < data.sideCount; s++)
                 {
                     var pOffset = s * data.SideOffset - w * 0.5f;
-                    var spawned = CreateRoadMesh(offset, data.Length, j, pOffset, vOffset, 2);
+                    var spawned = CreateRoadMesh(offset, data.Length, j, pOffset, vOffset, 3);
                     if (emptyPlatformCount <= 0 && s == chosenIndex)
                     {
                         Instantiate(collectiblePrefab, spawned.position + collectibleOffset, Quaternion.identity, spawned);
