@@ -54,7 +54,7 @@ MonoBehaviour:
   leanSpeed: 0.3
   rollChance: 0.1
   landingVfx: {fileID: 8143163729925976138}
-  landShakeAmount: 0.3
+  landShakeAmount: 0.35
   HERE: 
   startingPathPosition: 0
   startingYPosition: 0

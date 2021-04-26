@@ -236,7 +236,7 @@ public partial class PlayerController : MonoBehaviour
         }
         else if (!onGroundLast && OnGround)
         {
-            CameraController.instance.AddShake(0.2f, landShakeAmount, 0.3f);
+            CameraController.instance.AddShake(0.15f, landShakeAmount, 0.3f);
             landingVfx.Play();
         }
         onGroundLast = OnGround;

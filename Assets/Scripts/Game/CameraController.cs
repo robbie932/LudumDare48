@@ -93,7 +93,7 @@ public class CameraController : MonoBehaviour
         playerPos.y = curvePoint.y;//flat
         var dirToPlayer = playerPos - curvePoint;
 
-        distance += Game.Player.maxSpeed * (1 + dirToPlayer.z) * Time.fixedDeltaTime;
+        distance += Game.Player.maxSpeed * (1 + dirToPlayer.z * 2) * Time.fixedDeltaTime;
 
         var t = curvePoint + offsetPosition;
         UpdateRotation(curvePointRot.eulerAngles.y);
