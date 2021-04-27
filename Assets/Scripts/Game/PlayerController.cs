@@ -76,6 +76,11 @@ public partial class PlayerController : MonoBehaviour
     private bool holdingJump;
     private Vector3 startingPosition;
 
+    public float timeOnGroundToStore = 2;
+    private Vector3 groundPosCandidate;
+    private float groundTimer;
+
+
     void OnValidate()
     {
         minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
@@ -97,8 +102,7 @@ public partial class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition) + new Vector3(0, 1, 1);
-        SetDebugStartPos();
+        SetStartPos();
         transform.position = startingPosition;
     }
 
@@ -141,32 +145,44 @@ public partial class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, Game.Camera.curvePointRot.eulerAngles.y, 0);
         if (transform.position.y < lastY - 80)
         {
-            transform.position = startingPosition;
-            velocity = Vector3.zero;
-            body.AddForce(Vector3.zero, ForceMode.VelocityChange);
-            Game.Camera.ResetDistance();
             ResetToLevelStart();
         }
+
+
+        if (OnGround)
+        {
+            if (groundTimer == 0)
+            {
+                groundPosCandidate = transform.position;
+            }
+            groundTimer += Time.deltaTime;
+            if (groundTimer >= timeOnGroundToStore)
+            {
+                groundTimer = 0;
+                startingPosition = groundPosCandidate;
+            }
+        }
+        else
+        {
+            groundTimer = 0;
+        }
     }
 
-    void ResetToLevelStart() {
-        
-        //Only for testing the track...
-        if (startingPathPosition > 0) {
-            SetDebugStartPos();
-        }
-        
+    void ResetToLevelStart()
+    {
         transform.position = startingPosition;
         velocity = Vector3.zero;
-        Game.Camera.ResetDistance();
         body.AddForce(Vector3.zero, ForceMode.VelocityChange);
+        Game.Camera.ResetDistance();
     }
 
-    IEnumerator TinyPause() {
+    IEnumerator TinyPause()
+    {
         yield return new WaitForFixedUpdate();
     }
 
-    void SetDebugStartPos() {
+    void SetStartPos()
+    {
         startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition);
         
         startingPosition.x = startingPosition.x + startingXPosition;
@@ -175,7 +191,6 @@ public partial class PlayerController : MonoBehaviour
 
         //Reset the rigidbody velocity..
         body.isKinematic = true;
-        TinyPause();
         body.isKinematic = false;
     }
 
@@ -249,7 +264,7 @@ public partial class PlayerController : MonoBehaviour
         }
         else if (!onGroundLast && OnGround)
         {
-            CameraController.instance.AddShake(0.2f, landShakeAmount, 0.3f);
+            CameraController.instance.AddShake(0.15f, landShakeAmount, 0.3f);
             landingVfx.Play();
         }
         onGroundLast = OnGround;

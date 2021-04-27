@@ -54,7 +54,7 @@ MonoBehaviour:
   leanSpeed: 0.3
   rollChance: 0.1
   landingVfx: {fileID: 8143163729925976138}
-  landShakeAmount: 0.3
+  landShakeAmount: 0.35
   HERE: 
   startingPathPosition: 0
   startingYPosition: 0
@@ -69,6 +69,7 @@ MonoBehaviour:
   fallOffHelpTime: 0.2
   maxGroundAngle: 45
   body: {fileID: 8143163729469360354}
+  timeOnGroundToStore: 1.5
 --- !u!54 &8143163729469360354
 Rigidbody:
   m_ObjectHideFlags: 0

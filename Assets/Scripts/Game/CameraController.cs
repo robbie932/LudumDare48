@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
         var t = 0f;
         while (t < shakeDuration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             var a = t / shakeDuration;
             var eval = shakeCurve.Evaluate(a);
             var y = Mathf.Lerp(0, yForce, eval);
@@ -93,7 +93,7 @@ public class CameraController : MonoBehaviour
         playerPos.y = curvePoint.y;//flat
         var dirToPlayer = playerPos - curvePoint;
 
-        distance += Game.Player.maxSpeed * (1 + dirToPlayer.z) * Time.fixedDeltaTime;
+        distance += Game.Player.maxSpeed * (1 + dirToPlayer.z * 2) * Time.fixedDeltaTime;
 
         var t = curvePoint + offsetPosition;
         UpdateRotation(curvePointRot.eulerAngles.y);
