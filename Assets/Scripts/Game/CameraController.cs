@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
         var t = 0f;
         while (t < shakeDuration)
         {
-            t += Time.fixedDeltaTime;
+            t += Time.unscaledDeltaTime;
             var a = t / shakeDuration;
             var eval = shakeCurve.Evaluate(a);
             var y = Mathf.Lerp(0, yForce, eval);

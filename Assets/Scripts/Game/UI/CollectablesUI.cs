@@ -20,7 +20,7 @@ public class CollectablesUI : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        curAmmount = PlayerController.Score;
+        curAmmount = targetAmmount = PlayerController.Score;
     }
     public void UpdateText(int amount, int value)
     {

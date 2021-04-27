@@ -102,7 +102,6 @@ public partial class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        startingPosition = PlatformCreator.instance.pathCreator.path.GetPointAtDistance(startingPathPosition) + new Vector3(0, 1, 1);
         SetStartPos();
         transform.position = startingPosition;
     }
@@ -171,7 +170,6 @@ public partial class PlayerController : MonoBehaviour
 
     void ResetToLevelStart()
     {
-        SetStartPos();
         transform.position = startingPosition;
         velocity = Vector3.zero;
         body.AddForce(Vector3.zero, ForceMode.VelocityChange);

@@ -69,6 +69,7 @@ MonoBehaviour:
   fallOffHelpTime: 0.2
   maxGroundAngle: 45
   body: {fileID: 8143163729469360354}
+  timeOnGroundToStore: 1.5
 --- !u!54 &8143163729469360354
 Rigidbody:
   m_ObjectHideFlags: 0
