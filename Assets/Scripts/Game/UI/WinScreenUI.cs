@@ -56,7 +56,7 @@ public class WinScreenUI : MonoBehaviour
         Time.timeScale = 1;
 
         var sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (sceneIndex >= SceneManager.sceneCount)
+        if (sceneIndex >= SceneManager.sceneCountInBuildSettings)
         {
             sceneIndex = 0;
         }
