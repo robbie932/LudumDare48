@@ -58,6 +58,7 @@ MonoBehaviour:
   HERE: 
   startingPathPosition: 0
   startingYPosition: 0
+  startingXPosition: 0
   maxSpeed: 23
   maxAcceleration: 200
   maxAirAcceleration: 200
@@ -69,7 +70,7 @@ MonoBehaviour:
   fallOffHelpTime: 0.2
   maxGroundAngle: 45
   body: {fileID: 8143163729469360354}
-  timeOnGroundToStore: 1.5
+  timeOnGroundToStore: 0.5
 --- !u!54 &8143163729469360354
 Rigidbody:
   m_ObjectHideFlags: 0
