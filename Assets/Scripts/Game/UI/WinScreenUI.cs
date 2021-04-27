@@ -55,8 +55,8 @@ public class WinScreenUI : MonoBehaviour
         StopAllCoroutines();
         Time.timeScale = 1;
 
-        var sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (sceneIndex + 1 >= SceneManager.sceneCount)
+        var sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (sceneIndex >= SceneManager.sceneCount)
         {
             sceneIndex = 0;
         }
